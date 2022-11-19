@@ -1,1 +1,10 @@
 /* Stylesheet */
+header {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-bottom: 10px;
+}
+
+.sidemneu li {
+    color: blue;
+}
