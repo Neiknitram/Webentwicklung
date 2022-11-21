@@ -4,8 +4,8 @@ header {
     margin-bottom: 10px;
 }
 
-.sidemneu li {
-    color: blue;
+.sidemenu li a {
+    text-decoration: none;
 }
 
 .menu-indented {
