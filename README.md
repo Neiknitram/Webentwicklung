@@ -1,2 +1,3 @@
-# Webentwicklung
-Repository zum Wahlmodul "Webentwicklung" an der Universität Trier.
+# Aufgabenplaner
+Entwicklung eines Aufg abenplaners im Rahmen des Wahlmoduls "Webentwicklung"
+an der Universität Trier.
