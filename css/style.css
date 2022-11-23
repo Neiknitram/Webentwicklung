@@ -8,6 +8,11 @@ header {
     text-decoration: none;
 }
 
+.sidemenu li a:hover {
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
 .menu-indented {
     margin-left: 30px;
 }
