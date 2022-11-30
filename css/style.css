@@ -4,11 +4,11 @@ header {
     margin-bottom: 10px;
 }
 
-.sidemenu li a {
+.sidemenu li a, .form-text a {
     text-decoration: none;
 }
 
-.sidemenu li a:hover {
+.sidemenu li a:hover, .form-text a:hover {
     opacity: 0.7;
     transition: 0.3s ease;
 }
