@@ -25,7 +25,6 @@
 
     <div class="row">
 
-        <!-- Sidebar -->
         <?php include './modules/sidebar.html'; ?>
 
         <div class="col-8">
@@ -44,66 +43,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- Item-01 -->
-                    <tr>
-                        <td>HTML Datei erstellen</td>
-                        <td>HTML Datei erstellen</td>
-                        <td>ToDo</td>
-                        <td>Max Mustermann</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                    <!-- Item-02 -->
-                    <tr>
-                        <td>CSS Datei erstellen</td>
-                        <td>CSS Datei erstellen</td>
-                        <td>ToDo</td>
-                        <td>Max Mustermann</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                    <!-- Item-03 -->
-                    <tr>
-                        <td>PC eingeschaltet</td>
-                        <td>PC einschalten</td>
-                        <td>Erledigt</td>
-                        <td>Max Mustermann</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                    <!-- Item-04 -->
-                    <tr>
-                        <td>Kaffee trinken</td>
-                        <td>Kaffee trinken</td>
-                        <td>Erledigt</td>
-                        <td>Petra Müller</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                    <!-- Item-05 -->
-                    <tr>
-                        <td>Für die Uni lernen</td>
-                        <td>Für die Uni lernen</td>
-                        <td>Verschoben</td>
-                        <td>Max Mustermann</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
+
+                    <?php include './data/tasklist.php'; ?>
+
                     </tbody>
                 </table>
             </div>

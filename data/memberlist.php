@@ -1,16 +1,14 @@
 <?php
     $members = array(
         array(
-            'memberID' => 1,
             'name' => 'Max Mustermann',
             'email' => 'mustermann@muster.com',
-            'projectID' => 1
+            'project' => 1
         ),
         array(
-            'memberID' => 2,
             'name' => 'Petra Müller',
             'email' => 'petra@mueller.com',
-            'projectID' => 1
+            'project' => 1
         )
     );
 
