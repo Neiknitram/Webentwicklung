@@ -25,10 +25,7 @@
 
     <div class="row">
 
-        <!-- Sidebar -->
-        <?php
-        include './modules/sidebar.html';
-        ?>
+        <?php include './modules/sidebar.html'; ?>
 
         <div class="col-8">
             <div class="row">

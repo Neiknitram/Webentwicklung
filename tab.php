@@ -25,10 +25,7 @@
 
     <div class="row">
 
-        <!-- Sidebar -->
-        <?php
-        include './modules/sidebar.html';
-        ?>
+        <?php include './modules/sidebar.html'; ?>
 
         <div class="col-8">
             <div class="row mx-1 my-1">
@@ -44,36 +41,9 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!-- Item-01 -->
-                    <tr>
-                        <td>ToDo</td>
-                        <td>Dinge die erledigt werden müssen</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                    <!-- Item-02 -->
-                    <tr>
-                        <td>Erledigt</td>
-                        <td>Dinge die erledigt sind.</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
-                    <!-- Item-03 -->
-                    <tr>
-                        <td>Verschoben</td>
-                        <td>Dinge die später erledigt werden.</td>
-                        <!-- Buttons -->
-                        <td class="text-end">
-                            <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                        </td>
-                    </tr>
+
+                    <?php include './data/tablist.php' ?>
+
                     </tbody>
                 </table>
             </div>

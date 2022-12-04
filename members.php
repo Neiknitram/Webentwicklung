@@ -26,10 +26,7 @@
     <div class="row">
 
 
-        <?php
-            // Load Sidebar
-            include './modules/sidebar.html';
-        ?>
+        <?php  include './modules/sidebar.html'; ?>
 
         <div class="col-8">
             <div class="row mx-1 my-1">
@@ -47,10 +44,7 @@
 
                     <tbody>
 
-                        <?php
-                        // Load Memberlist
-                        include './data/memberlist.php';
-                        ?>
+                        <?php include './data/memberlist.php'; ?>
 
                     </tbody>
                 </table>
