@@ -40,11 +40,9 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                    <tbody>
 
                     <?php include './data/tablist.php' ?>
 
-                    </tbody>
                 </table>
             </div>
 

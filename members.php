@@ -42,11 +42,8 @@
                     </tr>
                     </thead>
 
-                    <tbody>
+                    <?php include './data/memberlist.php'; ?>
 
-                        <?php include './data/memberlist.php'; ?>
-
-                    </tbody>
                 </table>
             </div>
 

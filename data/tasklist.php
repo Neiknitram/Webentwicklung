@@ -32,15 +32,17 @@ $tasks = array(
     )
 );
 
+echo "<tbody>";
 foreach ($tasks as $task) {
     echo "<tr>";
-    echo ('<td>' . $task['name'] . '</td>');
-    echo ('<td>' . $task['description'] . '</td>');
-    echo ('<td>' . $task['tab'] . '</td>');
-    echo ('<td>' . $task['responsible'] . '</td>');
-    echo (' <td class="text-end">
+    echo('<td>' . $task['name'] . '</td>');
+    echo('<td>' . $task['description'] . '</td>');
+    echo('<td>' . $task['tab'] . '</td>');
+    echo('<td>' . $task['responsible'] . '</td>');
+    echo(' <td class="text-end">
                 <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
                 <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-            </td>
-            </tr>');
+           </td>
+           </tr>');
 }
+echo "</tbody>";

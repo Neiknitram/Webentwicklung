@@ -14,13 +14,15 @@ $tabs = array(
     )
 );
 
+echo "<tbody>";
 foreach ($tabs as $tab) {
     echo "<tr>";
-    echo ('<td>' . $tab['name'] . '</td>');
-    echo ('<td>' . $tab['description'] . '</td>');
-    echo (' <td class="text-end">
+    echo('<td>' . $tab['name'] . '</td>');
+    echo('<td>' . $tab['description'] . '</td>');
+    echo(' <td class="text-end">
                 <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
                 <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-            </td>
-            </tr>');
+           </td>
+           </tr>');
 }
+echo "</tbody>";

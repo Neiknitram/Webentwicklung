@@ -42,11 +42,9 @@
                         <th scope="col"></th>
                     </tr>
                     </thead>
-                    <tbody>
 
                     <?php include './data/tasklist.php'; ?>
 
-                    </tbody>
                 </table>
             </div>
 
