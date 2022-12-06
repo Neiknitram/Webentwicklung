@@ -15,10 +15,10 @@
 <!-- Main container -->
 <div class="container-fluid">
 
-    <!-- Header -->
-    <header class="bg-light">
-        <h1 class="text-center">Aufgabenplaner: Login</h1>
-    </header>
+    <?php
+        $title = "Login";
+        include "./modules/header.html";
+    ?>
 
     <div class="row">
 

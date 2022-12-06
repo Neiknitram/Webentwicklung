@@ -18,7 +18,6 @@
 <!-- Main container -->
 <div class="container-fluid">
 
-    <!-- Header -->
     <?php
         $title = "Mitglieder";
         include "./modules/header.html";

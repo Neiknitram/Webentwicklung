@@ -18,7 +18,6 @@
 <!-- Main container -->
 <div class="container-fluid">
 
-    <!-- Header -->
     <?php
         $title = "Reiter";
         include "./modules/header.html";
