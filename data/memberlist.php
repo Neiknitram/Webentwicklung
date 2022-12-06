@@ -12,6 +12,7 @@ $members = array(
     )
 );
 
+# Load Memberlist
 echo "<tbody>";
 foreach ($members as $member) {
     echo "<tr>";

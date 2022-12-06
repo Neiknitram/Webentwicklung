@@ -32,6 +32,7 @@ $tasks = array(
     )
 );
 
+# Load Tasklist
 echo "<tbody>";
 foreach ($tasks as $task) {
     echo "<tr>";

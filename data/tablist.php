@@ -14,6 +14,7 @@ $tabs = array(
     )
 );
 
+# Load Tablist
 echo "<tbody>";
 foreach ($tabs as $tab) {
     echo "<tr>";
