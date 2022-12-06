@@ -7,7 +7,7 @@ an der Universität Trier.
 <li>Martin Kien (1603310)</li>
 
 # Demo:
-https://dev.martinkien.info
+<a href="https://dev.martinkien.info" target="_blank">https://dev.martinkien.info</a>
 
 # Externe Quellen:
 <li>Bootstrap 5.2.2</li>
