@@ -19,9 +19,10 @@
 <div class="container-fluid">
 
     <!-- Header -->
-    <header class="bg-light">
-        <h1 class="text-center">Aufgabenplaner: Mitglieder</h1>
-    </header>
+    <?php
+        $title = "Mitglieder";
+        include "./modules/header.html";
+    ?>
 
     <div class="row">
 

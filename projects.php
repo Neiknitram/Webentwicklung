@@ -19,9 +19,10 @@
 <div class="container-fluid">
 
     <!-- Header -->
-    <header class="bg-light">
-        <h1 class="text-center">Aufgabenplaner: Projekte</h1>
-    </header>
+    <?php
+        $title = "Projekte";
+        include "./modules/header.html";
+    ?>
 
     <div class="row">
 
@@ -40,7 +41,7 @@
                     </div>
 
                     <!-- Buttons project -->
-                    <button type="button" class="btn btn-primary mb-2 mt-2">Auswählen</button>
+                    <button type="submit" class="btn btn-primary mb-2 mt-2">Auswählen</button>
                     <button type="button" class="btn btn-primary mb-2 mt-2">Bearbeiten</button>
                     <button type="button" class="btn btn-danger mb-2 mt-2">Löschen</button>
 

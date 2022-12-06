@@ -2,6 +2,10 @@
 Entwicklung eines Aufgabenplaners im Rahmen des Wahlmoduls "Webentwicklung"
 an der Universität Trier.
 
+# Autoren:
+<li>Philipp Geier (1539462)</li>
+<li>Martin Kien (1603310)</li>
+
 # Demo:
 https://dev.martinkien.info
 

@@ -19,9 +19,10 @@
 <div class="container-fluid">
 
     <!-- Header -->
-    <header class="bg-light">
-        <h1 class="text-center">Aufgabenplaner: Reiter</h1>
-    </header>
+    <?php
+        $title = "Reiter";
+        include "./modules/header.html";
+    ?>
 
     <div class="row">
 
@@ -52,8 +53,8 @@
 
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
-                        <label for="inputText">Projektname:</label>
-                        <input class="form-control" id="inputText" placeholder="Projekt">
+                        <label for="inputText">Bezeichnung des Reiters:</label>
+                        <input class="form-control" id="inputText" placeholder="Reiter">
                     </div>
 
                     <!-- Project description -->

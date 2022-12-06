@@ -19,9 +19,10 @@
 <div class="container-fluid">
 
     <!-- Header -->
-    <header class="bg-light">
-        <h1 class="text-center">Aufgabenplaner: Todos (Aktuelles Projekt)</h1>
-    </header>
+    <?php
+        $title = "Todos (Aktuelles Projekt)";
+        include "./modules/header.html";
+    ?>
 
     <div class="row">
 
@@ -52,7 +53,7 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">PC eingeschaltet (Petra Müller)</li>
-                            <li class="list-group-item">Kaffee tringen (Petra Müller)</li>
+                            <li class="list-group-item">Kaffee trinken (Petra Müller)</li>
                         </ul>
                     </div>
                 </div>

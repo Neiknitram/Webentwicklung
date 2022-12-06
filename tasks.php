@@ -19,9 +19,10 @@
 <div class="container-fluid">
 
     <!-- Header -->
-    <header class="bg-light">
-        <h1 class="text-center">Aufgabenplaner: Aufgaben</h1>
-    </header>
+    <?php
+        $title = "Aufgaben";
+        include "./modules/header.html";
+    ?>
 
     <div class="row">
 
@@ -85,7 +86,7 @@
 
                     <!-- Select tab -->
                     <div class="form-group mb-3 mt-3">
-                        <label for="selectTab">Fällig bis:</label>
+                        <label for="selectTab">Zugehöriger Reiter:</label>
                         <select class="form-select mt-1" aria-label="Default select example" id="selectTab">
                             <option selected disabled>- bitte auswählen -</option>
                             <option>ToDo</option>
