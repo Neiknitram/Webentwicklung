@@ -10,7 +10,8 @@ an der Universität Trier.
 https://dev.martinkien.info
 
 # Konfiguration:
-Datenbank unter "app/Conifg/database.example.php" konfigurieren und anschließend die Datei in "database.php" umbenennen. 
+Datenbank unter "app/Conifg/database.example.php" konfigurieren und anschließend
+die Datei in "database.php" umbenennen. 
 
 # Externe Quellen:
 <li>Bootstrap v5.2.2</li>
