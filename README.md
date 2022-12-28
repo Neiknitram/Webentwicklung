@@ -10,5 +10,6 @@ an der Universität Trier.
 https://dev.martinkien.info
 
 # Externe Quellen:
-<li>Bootstrap 5.2.2</li>
-<li>JQuery 3.6.1</li>
+<li>Bootstrap v5.2.2</li>
+<li>CodeIgniter v4.2.11</li>
+<li>JQuery v3.6.1</li>
