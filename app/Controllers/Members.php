@@ -21,7 +21,7 @@ class Members extends BaseController {
         );
 
         echo view('templates/header', $data);
-        echo view('members', $data);
+        echo view('members/members', $data);
         echo view('templates/footer');
     }
 

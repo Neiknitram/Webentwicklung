@@ -11,7 +11,7 @@
                 <form>
                     <!-- E-Mail input -->
                     <div class="form-group mb-2 mt-4">
-                        <label for="inputEmail">Email-Adresse:</label>
+                        <label for="inputEmail">Email-Addresse:</label>
                         <input type="email" class="form-control mt-1" id="inputEmail"
                                placeholder="Email-Adresse eingeben" required>
                     </div>
@@ -32,8 +32,8 @@
                     <br>
                     <!-- Help text -->
                     <small class="form-text text-muted">
-                        Noch nicht registriert? <a href="../register">Registrierung</a><br>
-                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="../todo">Überspringen</a>
+                        Noch nicht registriert? <a href="register">Registrierung</a><br>
+                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="todo">Überspringen</a>
                     </small>
                 </form>
             </div>

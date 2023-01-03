@@ -41,7 +41,7 @@ class Tasks extends BaseController {
         );
 
         echo view('templates/header', $data);
-        echo view('tasks', $data);
+        echo view('tasks/tasks', $data);
         echo view('templates/footer');
     }
 

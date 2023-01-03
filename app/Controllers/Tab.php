@@ -23,7 +23,7 @@ class Tab extends BaseController {
         );
 
         echo view('templates/header', $data);
-        echo view('tab', $data);
+        echo view('tab/tab', $data);
         echo view('templates/footer');
     }
 
