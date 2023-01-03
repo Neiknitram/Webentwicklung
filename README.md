@@ -10,7 +10,7 @@ an der Universität Trier.
 https://dev.martinkien.info
 
 # Konfiguration:
-Datenbank unter "app/Conifg/database.example.php" konfigurieren und anschließend
+Datenbank unter "app/Config/database.example.php" konfigurieren und anschließend
 die Datei in "database.php" umbenennen. 
 
 # Externe Quellen:
