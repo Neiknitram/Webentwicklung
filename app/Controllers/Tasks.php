@@ -6,6 +6,7 @@ class Tasks extends BaseController {
 
     public function index() {
 
+        $data['page_title'] = 'Aufgaben';
         $data['tasks'] = array(
             array(
                 'name' => 'HTML Datei erstellen',
@@ -39,7 +40,6 @@ class Tasks extends BaseController {
             )
         );
 
-        $data['page_title'] = 'Aufgaben';
         echo view('templates/header', $data);
         echo view('tasks', $data);
         echo view('templates/footer');

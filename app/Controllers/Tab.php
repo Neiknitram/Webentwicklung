@@ -6,6 +6,7 @@ class Tab extends BaseController {
 
     public function index() {
 
+        $data['page_title'] = 'Reiter';
         $data['tabs'] = array(
             array(
                 'name' => 'ToDo',
@@ -21,7 +22,6 @@ class Tab extends BaseController {
             )
         );
 
-        $data['page_title'] = 'Reiter';
         echo view('templates/header', $data);
         echo view('tab', $data);
         echo view('templates/footer');

@@ -51,7 +51,7 @@
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Aufgabenbezeichnung:</label>
-                        <input class="form-control mt-1" id="inputText" placeholder="Aufgabe">
+                        <input class="form-control mt-1" id="inputText" placeholder="Aufgabenbezeichnung eingeben">
                     </div>
 
                     <!-- Project description -->
@@ -59,7 +59,7 @@
                         <div class="form-group mb-2 mt-2">
                             <label for="inputTextarea">Beschreibung der Aufgabe:</label>
                             <textarea class="form-control mt-1" id="inputTextarea" rows="3"
-                                      placeholder="Beschreibung"></textarea>
+                                      placeholder="Beschreibung der Aufgabe eingeben"></textarea>
                         </div>
                     </div>
 

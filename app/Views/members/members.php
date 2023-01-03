@@ -49,12 +49,12 @@
                     <h4 class="mt-4">Bearbeiten/Erstellen:</h4>
                     <!-- Username input -->
                     <div class="form-group mb-3 mt-3">
-                        <label for="inputText">Username:</label>
-                        <input class="form-control mt-1" id="inputText" placeholder="Username">
+                        <label for="inputText">Benutzername:</label>
+                        <input class="form-control mt-1" id="inputText" placeholder="Benutzername eingeben">
                     </div>
                     <!-- E-Mail input -->
                     <div class="form-group mb-3 mt-3">
-                        <label for="inputEmail">Email-Addresse:</label>
+                        <label for="inputEmail">Email-Adresse:</label>
                         <input type="email" class="form-control mt-1" id="inputEmail"
                                placeholder="Email-Adresse eingeben">
                     </div>

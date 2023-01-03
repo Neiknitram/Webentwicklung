@@ -47,7 +47,7 @@
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Bezeichnung des Reiters:</label>
-                        <input class="form-control" id="inputText" placeholder="Reiter">
+                        <input class="form-control" id="inputText" placeholder="Bezeichnung des Reiters eingeben">
                     </div>
 
                     <!-- Project description -->
@@ -55,7 +55,7 @@
                         <div class="form-group mb-2 mt-2">
                             <label for="inputTextarea">Projektbeschreibung:</label>
                             <textarea class="form-control mt-1" id="inputTextarea" rows="3"
-                                      placeholder="Beschreibung"></textarea>
+                                      placeholder="Projektbeschreibung eingeben"></textarea>
                         </div>
                     </div>
 

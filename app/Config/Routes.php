@@ -39,6 +39,7 @@ $routes->get('/', 'Login::index');
 $routes->get('login', 'Login::index');
 $routes->get('members', 'Members::index');
 $routes->get('projects', 'Projects::index');
+$routes->get('register', 'Register::index');
 $routes->get('tab', 'Tab::index');
 $routes->get('tasks', 'Tasks::index');
 $routes->get('todo', 'Todo::index');

@@ -29,7 +29,7 @@
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Projektname:</label>
-                        <input class="form-control mt-2" id="inputText" placeholder="Projekt">
+                        <input class="form-control mt-2" id="inputText" placeholder="Projektname eingeben">
                     </div>
 
                     <!-- Project description -->
@@ -37,7 +37,7 @@
                         <div class="form-group mb-2 mt-2">
                             <label for="inputTextarea">Projektbeschreibung:</label>
                             <textarea class="form-control mt-2" id="inputTextarea" rows="3"
-                                      placeholder="Beschreibung"></textarea>
+                                      placeholder="Projektbeschreibung eingeben"></textarea>
                         </div>
                     </div>
 

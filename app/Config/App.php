@@ -70,7 +70,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $defaultLocale = 'en';
+    public $defaultLocale = 'de';
 
     /**
      * --------------------------------------------------------------------------
@@ -109,7 +109,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $appTimezone = 'America/Chicago';
+    public $appTimezone = 'Europe/Berlin';
 
     /**
      * --------------------------------------------------------------------------
@@ -137,7 +137,7 @@ class App extends BaseConfig
      *
      * @var bool
      */
-    public $forceGlobalSecureRequests = false;
+    public $forceGlobalSecureRequests = true;
 
     /**
      * --------------------------------------------------------------------------
