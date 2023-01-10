@@ -4,15 +4,15 @@
 
         //muss getestet werden
         public function login(){
-            $this->members = $this->db->table(''); //Ich weiß nicht wie der Tabellennamen von members ist
-            $this->members->select('password');
-            $this->members->where('members.username',$_POST['username']);
+            $this->members = $this->db->table('mitglieder');
+            $this->members->select('Password');
+            $this->members->where('mitglieder.Username',$_POST['username']);
             $result = $this->members.get();
 
             return $result->getRowArray();
         }
         public function getData() {
-            /*$data['members'] = array(
+            $data['members'] = array(
                 array(
                     'name' => 'Max Mustermann',
                     'email' => 'mustermann@muster.com',
@@ -23,8 +23,9 @@
                     'email' => 'petra@mueller.com',
                     'project' => 1
                 )
-            );*/
-            $result = $this->db->query(''); // query muss noch hinzugefügt werden
-            return $result->getResultArray();
+            );
+            //$result = $this->db->query('SELECT * FROM mitglieder');
+            //return $result["members"]->getResultArray();
+            return $data["members"];
         }
     }

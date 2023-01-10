@@ -9,9 +9,9 @@ class Members extends BaseController {
     public function index() {
 
         $data['page_title'] = 'Mitglieder';
-        //$membersmodel = new MembersModel();
-        //$data['members'] = $membersmodel->getData();
-        $data['members'] = $this->MembersModel->getData(); //so hat er das in dem Video gemacht
+        $membersmodel = new MembersModel();
+        $data['members'] = $membersmodel->getData();
+        //$data['members'] = $this->MembersModel->getData(); //so hat er das in dem Video gemacht
 
 
         echo view('templates/header', $data);

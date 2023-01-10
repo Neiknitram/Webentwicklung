@@ -8,6 +8,13 @@ class Login extends BaseController {
 
     public function index() {
         $data['page_title'] = 'Login';
+
+        echo view('templates/header', $data);
+        echo view('login', $data);
+        echo view('templates/footer');
+    }
+
+    public function login() {
         if (isset($_POST['inputEmail']) && $_POST['inputPassword']){
             if ($this->MembersModel->login() != NULL){
                 $password = $this->MembersModel->login()['inputPassword'];
@@ -19,9 +26,6 @@ class Login extends BaseController {
                 }
             }
         }
-        echo view('templates/header', $data);
-        echo view('login', $data);
-        echo view('templates/footer');
     }
 
     public function logout(){
