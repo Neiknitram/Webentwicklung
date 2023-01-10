@@ -9,7 +9,7 @@
         <div class="col-6 mx-auto">
             <div class="row">
 
-                <?php
+    <?php
     if(array_key_exists('button1', $_POST)) {
         button1();
     }
@@ -19,6 +19,7 @@
     ?>
 
                 <form method="post">
+                    <?= form_open("login/index,", array('role' => 'form')) ?>
                     <!-- E-Mail input -->
                     <div class="form-group mb-2 mt-4">
                         <label for="inputEmail">Email-Addresse:</label>
@@ -34,10 +35,12 @@
 
                     <?php
                         $test = password_hash("123", PASSWORD_DEFAULT);
+                        echo $test.'\n';
                         if (password_verify("123", $test)) {
                             echo "hat funktioniert";
                         }
                     ?>
+
 
                     <!-- Data privacy checkbox -->
                     <div class="form-check mb-2 mt-2">
