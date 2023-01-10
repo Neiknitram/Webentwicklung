@@ -8,7 +8,17 @@
         <!-- Login-Form -->
         <div class="col-6 mx-auto">
             <div class="row">
-                <form>
+
+                <?php
+    if(array_key_exists('button1', $_POST)) {
+        button1();
+    }
+    function button1() {
+        echo "This is Button1 that is selected";
+    }
+    ?>
+
+                <form method="post">
                     <!-- E-Mail input -->
                     <div class="form-group mb-2 mt-4">
                         <label for="inputEmail">Email-Addresse:</label>
@@ -21,6 +31,14 @@
                         <input type="password" class="form-control mt-1" id="inputPassword"
                                placeholder="Passwort eingeben" required>
                     </div>
+
+                    <?php
+                        $test = password_hash("123", PASSWORD_DEFAULT);
+                        if (password_verify("123", $test)) {
+                            echo "hat funktioniert";
+                        }
+                    ?>
+
                     <!-- Data privacy checkbox -->
                     <div class="form-check mb-2 mt-2">
                         <label class="form-check-label" for="checkDataprivacy">AGBs und Datenschutzbedingungen

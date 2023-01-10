@@ -2,23 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\MembersModel;
+
 class Members extends BaseController {
 
     public function index() {
 
         $data['page_title'] = 'Mitglieder';
-        $data['members'] = array(
-            array(
-                'name' => 'Max Mustermann',
-                'email' => 'mustermann@muster.com',
-                'project' => 1
-            ),
-            array(
-                'name' => 'Petra Müller',
-                'email' => 'petra@mueller.com',
-                'project' => 1
-            )
-        );
+        $membersmodel = new MembersModel();
+        $data['members'] = $membersmodel->getData();
+
 
         echo view('templates/header', $data);
         echo view('members/members', $data);
