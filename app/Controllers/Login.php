@@ -14,8 +14,8 @@ class Login extends BaseController {
         echo view('templates/footer');
     }
 
-    public function login()
-    {
+    public function login() {
+
         if (!empty($_POST)) {
             if (isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
                 $membersmodel = new MembersModel();
@@ -30,6 +30,7 @@ class Login extends BaseController {
                     }
                 }
             }
+
         }
         return redirect()->to(base_url() . '/'.'login');
     }

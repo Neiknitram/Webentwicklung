@@ -11,12 +11,12 @@ class Members extends BaseController {
         $data['page_title'] = 'Mitglieder';
         $membersmodel = new MembersModel();
         $data['members'] = $membersmodel->getData();
-        //$data['members'] = $this->MembersModel->getData(); //so hat er das in dem Video gemacht
-
+        //$data['members'] = $this->MembersModel->getData();
 
         echo view('templates/header', $data);
         echo view('members/members', $data);
         echo view('templates/footer');
+
     }
 
 }

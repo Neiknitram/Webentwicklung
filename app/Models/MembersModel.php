@@ -2,11 +2,11 @@
     use CodeIgniter\Model;
     class MembersModel extends Model {
 
-        //muss getestet werden
         public function login($email){
             $result = $this->db->query('SELECT Password FROM mitglieder WHERE EMail = "'.$email.'"');
             return $result->getResultArray();
         }
+
         public function getData() {
             $result = $this->db->query('SELECT * FROM mitglieder');
             return $result->getResultArray();
@@ -21,4 +21,5 @@
             $result = $this->db->query('SELECT ID FROM mitglieder WHERE EMail = "'.$email.'"');
             return $result->getResultArray();
         }
+
     }
