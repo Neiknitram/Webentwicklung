@@ -1,4 +1,4 @@
-<!-- Main container TEST-->
+<!-- Main container -->
 <div class="container-fluid">
 
     <?php echo view('templates/headline'); ?>
