@@ -43,6 +43,7 @@ $routes->get('register', 'Register::index');
 $routes->get('tab', 'Tab::index');
 $routes->get('tasks', 'Tasks::index');
 $routes->get('todo', 'Todo::index');
+$routes->post('/Login/login', 'Login::login');
 
 /*
  * --------------------------------------------------------------------

@@ -9,29 +9,20 @@
         <div class="col-6 mx-auto">
             <div class="row">
 
-                <form>
-
+                <?php echo isset($error) ? $error : ''; ?>
+                <form method="post" action="<?php echo site_url('/Login/login'); ?>">
                     <!-- E-Mail input -->
                     <div class="form-group mb-2 mt-4">
                         <label for="inputEmail">Email-Addresse:</label>
-                        <input type="email" class="form-control mt-1" id="inputEmail"
+                        <input type="email" class="form-control mt-1" name="inputEmail"
                                placeholder="Email-Adresse eingeben" required>
                     </div>
                     <!-- Password input -->
                     <div class="form-group mb-2 mt-2">
                         <label for="inputPassword">Passwort:</label>
-                        <input type="password" class="form-control mt-1" id="inputPassword"
+                        <input type="password" class="form-control mt-1" name="inputPassword"
                                placeholder="Passwort eingeben" required>
                     </div>
-
-                    <?php
-                        $password = password_hash("123", PASSWORD_DEFAULT);
-                        echo $password;
-                        echo "<br>";
-                        if (password_verify("123", $password)) {
-                            echo "Passwörter stimmen überein.";
-                        }
-                    ?>
 
                     <!-- Data privacy checkbox -->
                     <div class="form-check mb-2 mt-2">
@@ -40,7 +31,7 @@
                         <input type="checkbox" class="form-check-input mt-1" id="checkDataprivacy" required>
                     </div>
                     <!-- Login button -->
-                    <button type="submit" class="btn btn-primary mb-2 mt-2">Einloggen</button>
+                    <button type="submit" class="btn btn-primary mb-2 mt-2" value="Login">Einloggen</button>
                     <br>
                     <!-- Help text -->
                     <small class="form-text text-muted">

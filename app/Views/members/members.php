@@ -24,10 +24,11 @@
                     <!-- Load Memberlist -->
                     <tbody>
                     <?php
+
                     foreach ($members as $member) {
                         echo "<tr>";
-                        echo('<td>' . $member['name'] . '</td>');
-                        echo('<td>' . $member['email'] . '</td>');
+                        echo('<td>' . $member['Username'] . '</td>');
+                        echo('<td>' . $member['EMail'] . '</td>');
                         echo('<td>
                                       <input class="form-check-input" type="checkbox" value="" id="item1check">
                                       <label class="form-check-label" for="item1check"></label>
