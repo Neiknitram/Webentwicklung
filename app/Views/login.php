@@ -13,7 +13,7 @@
                 <form method="post" action="<?php echo site_url('/Login/login'); ?>">
                     <!-- E-Mail input -->
                     <div class="form-group mb-2 mt-4">
-                        <label for="inputEmail">Email-Addresse:</label>
+                        <label for="inputEmail">Email-Adresse:</label>
                         <input type="email" class="form-control mt-1" name="inputEmail"
                                placeholder="Email-Adresse eingeben" required>
                     </div>
