@@ -29,7 +29,7 @@
                             echo('<td>' . $tab['name'] . '</td>');
                             echo('<td>' . $tab['description'] . '</td>');
                             echo(' <td class="text-end">
-                                <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="tab_edit"><i class="fa-regular fa-pen-to-square"></i></a>
                                 <a href="#"><i class="fa-regular fa-trash-can"></i></a>
                             </td>
                         </tr>');

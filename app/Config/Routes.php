@@ -36,7 +36,9 @@ $routes->get('members_edit', 'Members_edit::index');
 $routes->get('projects', 'Projects::index');
 $routes->get('register', 'Register::index');
 $routes->get('tab', 'Tab::index');
+$routes->get('tab_edit', 'Tab_edit::index');
 $routes->get('tasks', 'Tasks::index');
+$routes->get('tasks_edit', 'Tasks_edit::index');
 $routes->get('todo', 'Todo::index');
 $routes->post('/Login/login', 'Login::login');
 

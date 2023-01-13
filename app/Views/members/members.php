@@ -34,7 +34,7 @@
                                       <label class="form-check-label" for="item1check"></label>
                                   </td>
                                   <td class="text-end">
-                                      <a href="#"><i class="fa-regular fa-pen-to-square"></i></a>
+                                      <a href="members_edit"><i class="fa-regular fa-pen-to-square"></i></a>
                                       <a href="#"><i class="fa-regular fa-trash-can"></i></a>
                                   </td>
                                   </tr>');
