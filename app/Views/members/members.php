@@ -45,23 +45,23 @@
             </div>
 
             <div class="row">
-                <form>
-                    <h4 class="mt-4">Bearbeiten/Erstellen:</h4>
+                <form method="post" action="<?php echo site_url('/membersAdd'); ?>">
+                    <h4 class="mt-4">Erstellen:</h4>
                     <!-- Username input -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Benutzername:</label>
-                        <input class="form-control mt-1" id="inputText" placeholder="Benutzername eingeben">
+                        <input class="form-control mt-1" name="inputText" id="inputText" placeholder="Benutzername eingeben">
                     </div>
                     <!-- E-Mail input -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputEmail">Email-Adresse:</label>
-                        <input type="email" class="form-control mt-1" id="inputEmail"
+                        <input type="email" class="form-control mt-1" name="inputEmail" id="inputEmail"
                                placeholder="Email-Adresse eingeben">
                     </div>
                     <!-- Password input -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputPassword">Passwort:</label>
-                        <input type="password" class="form-control mt-1" id="inputPassword"
+                        <input type="password" class="form-control mt-1" name="inputPassword" id="inputPassword"
                                placeholder="Passwort eingeben">
                     </div>
                     <!-- Assigned to project -->
@@ -70,7 +70,7 @@
                         <input type="checkbox" class="form-check-input mt-1" id="checkAssignedProject">
                     </div>
                     <!-- Buttons -->
-                    <button type="button" class="btn btn-primary mb-2 mt-2">Speichern</button>
+                    <button type="submit" class="btn btn-primary mb-2 mt-2">Speichern</button>
                     <button type="button" class="btn btn-info text-light mb-2 mt-2">Reset</button>
                 </form>
             </div>

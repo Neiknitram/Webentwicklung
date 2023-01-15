@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-6 mx-auto border rounded">
-            <form method="post" action="<?php echo site_url('/members_edit'); ?>">
+            <form method="post" action="<?php echo site_url('/membersEdit'); ?>">
                 <!-- Username input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputText">Benutzername:</label>

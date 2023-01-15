@@ -22,6 +22,8 @@ class Login extends BaseController {
                 $results = $membersmodel->login($_POST['inputEmail']);
 
                 foreach ($results as $result) {
+                    var_dump($_POST['inputPassword']);
+                    var_dump( $result['Password']);
                     if (password_verify($_POST['inputPassword'], $result['Password'])) {
                         session_start();
                         $_SESSION['Email']= $_POST['inputEmail'];
