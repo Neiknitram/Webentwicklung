@@ -14,12 +14,17 @@
 
         public function get_Username($email){
             $result = $this->db->query('SELECT Username FROM mitglieder WHERE EMail = "'.$email.'"');
-            return $result->getResultArray();
+            return $result->getResultArray()[0]['Username'];
         }
 
         public function get_ID($email){
             $result = $this->db->query('SELECT ID FROM mitglieder WHERE EMail = "'.$email.'"');
-            return $result->getResultArray();
+            return $result->getResultArray()[0]['ID'];
+        }
+
+        public function editMember($Username, $Email, $Password){
+            $this->db->query('UPDATE mitglieder SET Username = "'.$Username.'", EMail= "'.$Email.'", Password= "'.
+                $Password.'" WHERE ID = '.$_SESSION['ID'].';');
         }
 
     }

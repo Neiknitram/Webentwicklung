@@ -24,6 +24,7 @@ class Login extends BaseController {
                 foreach ($results as $result) {
                     if (password_verify($_POST['inputPassword'], $result['Password'])) {
                         session_start();
+                        $_SESSION['Email']= $_POST['inputEmail'];
                         $_SESSION['Username'] = $membersmodel->get_Username($_POST['inputEmail']);
                         $_SESSION['ID'] = $membersmodel->get_ID($_POST['inputEmail']);
                         return redirect()->to(base_url() . '/'.'projects');

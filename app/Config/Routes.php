@@ -41,6 +41,7 @@ $routes->get('tasks', 'Tasks::index');
 $routes->get('tasks_edit', 'Tasks_edit::index');
 $routes->get('todo', 'Todo::index');
 $routes->post('/Login/login', 'Login::login');
+$routes->post('/members_edit', 'Members_edit::editMember');
 
 /*
  * --------------------------------------------------------------------

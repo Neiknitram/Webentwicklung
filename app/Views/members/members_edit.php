@@ -1,26 +1,38 @@
 <!-- Main container -->
 <div class="container-fluid">
 
-    <?php echo view('templates/headline'); ?>
+    <?php echo view('templates/headline');
+    session_start();
+    ?>
 
     <div class="row">
         <div class="col-6 mx-auto border rounded">
-            <form>
+            <form method="post" action="<?php echo site_url('/members_edit'); ?>">
                 <!-- Username input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputText">Benutzername:</label>
-                    <input class="form-control mt-1" id="inputText" placeholder="<Benutzername>">
+                    <?php
+                    echo('<input class="form-control mt-1" id="inputText" name="inputText" placeholder="<Benutzername>" 
+                        value="');
+                    echo($_SESSION["Username"]);
+                    echo('">');
+                    ?>
                 </div>
                 <!-- E-Mail input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputEmail">Email-Adresse:</label>
-                    <input type="email" class="form-control mt-1" id="inputEmail"
-                           placeholder="<Email-Adresse>">
+                    <?php
+                    echo('<input type="email" class="form-control mt-1" id="inputEmail" name="inputEmail" 
+                        placeholder="<Email-Adresse>" value="');
+                    echo($_SESSION["Email"]);
+                    echo('">');
+                    ?>
+
                 </div>
                 <!-- Password input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputPassword">Passwort:</label>
-                    <input type="password" class="form-control mt-1" id="inputPassword"
+                    <input type="password" class="form-control mt-1" id="inputPassword" name="inputPassword"
                            placeholder="<Passwort>">
                 </div>
                 <!-- Assigned to project -->
@@ -30,6 +42,7 @@
                 </div>
                 <!-- Buttons -->
                 <a href="#" class="btn btn-success mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</a>
+                <button type="submit" class="btn btn-primary mb-2 mt-2" value="Save">Speichern</button>
                 <a href="members" class="btn btn-danger text-light mb-2 mt-2"><i class="fa-solid fa-xmark"></i> Abbrechen</a>
             </form>
         </div>
