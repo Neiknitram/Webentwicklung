@@ -33,5 +33,4 @@
             $this->db->query('INSERT INTO mitglieder (Username,EMail,Password)
                 VALUES ("'.$Username.'","'.$Email.'","'. $hashedPassword.'");');
         }
-
     }
