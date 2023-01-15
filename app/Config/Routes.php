@@ -33,6 +33,7 @@ $routes->get('/', 'Login::index');
 $routes->get('login', 'Login::index');
 $routes->get('members', 'Members::index');
 $routes->get('members_edit', 'Members_edit::index');
+$routes->get('members_delete', 'Members_delete::index');
 $routes->get('projects', 'Projects::index');
 $routes->get('register', 'Register::index');
 $routes->get('tab', 'Tab::index');
@@ -43,6 +44,7 @@ $routes->get('todo', 'Todo::index');
 $routes->post('/Login/login', 'Login::login');
 $routes->post('/membersEdit', 'Members_edit::editMember');
 $routes->post('/membersAdd', 'Members::addMember');
+$routes->get('/membersDelete', 'Members_delete::deleteMember');
 
 /*
  * --------------------------------------------------------------------

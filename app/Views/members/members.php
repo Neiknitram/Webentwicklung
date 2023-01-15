@@ -24,7 +24,7 @@
                     <!-- Load Memberlist -->
                     <tbody>
                     <?php
-
+                    session_start();
                     foreach ($members as $member) {
                         echo "<tr>";
                         echo('<td>' . $member['Username'] . '</td>');
@@ -32,12 +32,14 @@
                         echo('<td>
                                       <input class="form-check-input" type="checkbox" value="" id="item1check">
                                       <label class="form-check-label" for="item1check"></label>
-                                  </td>
+                                  </td>');
+                        if ($member['ID']==$_SESSION['ID']) {
+                            echo('
                                   <td class="text-end">
                                       <a href="members_edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                                      <a href="#"><i class="fa-regular fa-trash-can"></i></a>
-                                  </td>
-                                  </tr>');
+                                      <a href="members_delete"><i class="fa-regular fa-trash-can"></i></a></td>');
+                        }
+                        echo('</tr>');
                     }
                     ?>
                     </tbody>

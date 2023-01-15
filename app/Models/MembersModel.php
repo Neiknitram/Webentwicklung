@@ -33,4 +33,8 @@
             $this->db->query('INSERT INTO mitglieder (Username,EMail,Password)
                 VALUES ("'.$Username.'","'.$Email.'","'. $hashedPassword.'");');
         }
+
+        public function deleteMember($ID){
+            $this->db->query('DELETE FROM mitglieder WHERE ID="'.$ID.'"');
+        }
     }

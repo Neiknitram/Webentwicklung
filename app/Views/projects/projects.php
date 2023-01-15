@@ -6,9 +6,6 @@
     <div class="row">
 
         <?php echo view('templates/sidebar'); ?>
-        <?php session_start();
-        var_dump($_SESSION['Username']);
-        ?>
 
         <div class="col-8">
             <div class="row">
