@@ -21,12 +21,15 @@ class Members extends BaseController {
 
     public function addMember(){
         session_start();
-        if (isset($_POST['inputText']) && isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
-            $membersmodel = new MembersModel();
-            $membersmodel->addMember($_POST['inputText'],$_POST['inputEmail'],$_POST['inputPassword']);
+        if(isset($_POST['save'])) {
+            if (isset($_SESSION['ID']) && isset($_POST['inputText']) && isset($_POST['inputEmail']) &&
+                isset($_POST['inputPassword'])) {
+                if(($_POST['inputText']!="") && ($_POST['inputEmail']!="") && ($_POST['inputPassword']!="")) {
+                    $membersmodel = new MembersModel();
+                    $membersmodel->addMember($_POST['inputText'], $_POST['inputEmail'], $_POST['inputPassword']);
+                }
+            }
         }
-
-
         return redirect()->to(base_url() . '/'.'members');
     }
 

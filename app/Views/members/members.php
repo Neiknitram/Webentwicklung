@@ -33,11 +33,13 @@
                                       <input class="form-check-input" type="checkbox" value="" id="item1check">
                                       <label class="form-check-label" for="item1check"></label>
                                   </td>');
-                        if ($member['ID']==$_SESSION['ID']) {
-                            echo('
+                        if (isset($_SESSION['ID'])) {
+                            if ($member['ID'] == $_SESSION['ID']) {
+                                echo('
                                   <td class="text-end">
                                       <a href="members_edit"><i class="fa-regular fa-pen-to-square"></i></a>
                                       <a href="members_delete"><i class="fa-regular fa-trash-can"></i></a></td>');
+                            }
                         }
                         echo('</tr>');
                     }
@@ -72,8 +74,8 @@
                         <input type="checkbox" class="form-check-input mt-1" id="checkAssignedProject">
                     </div>
                     <!-- Buttons -->
-                    <button type="submit" class="btn btn-primary mb-2 mt-2">Speichern</button>
-                    <button type="button" class="btn btn-info text-light mb-2 mt-2">Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2">Speichern</button>
+                    <button type="submit" name="reset" class="btn btn-info text-light mb-2 mt-2">Reset</button>
                 </form>
             </div>
 
