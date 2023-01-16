@@ -8,7 +8,7 @@ class Members_delete extends BaseController {
 
     public function index() {
 
-        $data['page_title'] = 'Mitglied bearbeiten';
+        $data['page_title'] = 'Mitglied löschen';
 
         echo view('templates/header', $data);
         echo view('members/members_delete', $data);
