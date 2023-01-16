@@ -23,9 +23,11 @@
         }
 
         public function editMember($Username, $Email, $Password){
-            $hashedPassword = password_hash($Password,PASSWORD_DEFAULT);
-            $this->db->query('UPDATE mitglieder SET Username = "'.$Username.'", EMail= "'.$Email.'", Password= "'.
-                $hashedPassword.'" WHERE ID = '.$_SESSION['ID'].';');
+            if(isset($Username) && isset($Email) && isset($Password)) {
+                $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
+                $this->db->query('UPDATE mitglieder SET Username = "' . $Username . '", EMail= "' . $Email . '", Password= "' .
+                    $hashedPassword . '" WHERE ID = ' . $_SESSION['ID'] . ';');
+            }
         }
 
         public function addMember($Username, $Email, $Password){
