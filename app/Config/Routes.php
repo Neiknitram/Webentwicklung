@@ -45,7 +45,7 @@ $routes->get('todo', 'Todo::index');
 $routes->post('/login', 'Login::login');
 $routes->post('/membersEdit', 'Members_edit::editMember');
 $routes->post('/membersAdd', 'Members::addMember');
-$routes->get('/membersDelete', 'Members_delete::deleteMember');
+$routes->post('/membersDelete', 'Members_delete::deleteMember');
 $routes->get('/projects', 'Projects::index');
 
 /*
