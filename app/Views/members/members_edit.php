@@ -27,7 +27,6 @@
                     echo($_SESSION["Email"]);
                     echo('">');
                     ?>
-
                 </div>
                 <!-- Password input -->
                 <div class="form-group mb-3 mt-3">
