@@ -12,13 +12,14 @@
             return $result->getResultArray();
         }
 
-        public function get_Username($email){
-            $result = $this->db->query('SELECT Username FROM mitglieder WHERE EMail = "'.$email.'"');
+        public function get_Username($Email,$Password){
+            $result = $this->db->query('SELECT Username FROM mitglieder WHERE EMail = "'.$Email.'" AND Password="'.$Password.'"');
             return $result->getResultArray()[0]['Username'];
         }
 
-        public function get_ID($email){
-            $result = $this->db->query('SELECT ID FROM mitglieder WHERE EMail = "'.$email.'"');
+        public function get_ID($Username,$Email, $Password){
+            $result = $this->db->query('SELECT ID FROM mitglieder WHERE EMail = "'.$Email.'" AND Password="'.$Password.'" AND Username="'.$Username.'"');
+            var_dump($result->getResultArray());
             return $result->getResultArray()[0]['ID'];
         }
 
@@ -27,13 +28,14 @@
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 $this->db->query('UPDATE mitglieder SET Username = "' . $Username . '", EMail= "' . $Email . '", Password= "' .
                     $hashedPassword . '" WHERE ID = ' . $_SESSION['ID'] . ';');
-            }
-            if (isset($Checked)){
-                $this->db->query('INSERT INTO projekte_mitglieder (projekt_id,mitglieder_id)
-                VALUES ('.$_SESSION['ProjectID'].','.$this->get_ID($Email).')');
-            }else{
-                $this->db->query('DELETE FROM projekte_mitglieder WHERE projekt_id='.$_SESSION['ProjectID'].
-                    ' AND mitglieder_id='.$this->get_ID($Email));
+                if (isset($Checked)){
+                    $this->db->query('INSERT INTO projekte_mitglieder (projekt_id,mitglieder_id)
+                VALUES ('.$_SESSION['ProjectID'].','.$this->get_ID($Username, $Email, $hashedPassword).')');
+                    //var_dump($this->get_ID($Username, $Email, $hashedPassword));
+                }else{
+                    $this->db->query('DELETE FROM projekte_mitglieder WHERE projekt_id='.$_SESSION['ProjectID'].
+                        ' AND mitglieder_id='.$this->get_ID($Username, $Email, $hashedPassword));
+                }
             }
         }
 
@@ -43,7 +45,7 @@
                 VALUES ("'.$Username.'","'.$Email.'","'. $hashedPassword.'");');
             if (isset($Checked)){
                 $this->db->query('INSERT INTO projekte_mitglieder (projekt_id,mitglieder_id)
-                VALUES ('.$_SESSION['ProjectID'].','.$this->get_ID($Email).')');
+                VALUES ('.$_SESSION['ProjectID'].','.$this->get_ID($Username, $Email, $hashedPassword).')');
             }
         }
 

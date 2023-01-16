@@ -22,8 +22,8 @@ class Login extends BaseController {
                 if (password_verify($_POST['inputPassword'], $result['Password'])) {
                     session_start();
                     $_SESSION['Email'] = $_POST['inputEmail'];
-                    $_SESSION['Username'] = $membersmodel->get_Username($_POST['inputEmail']);
-                    $_SESSION['ID'] = $membersmodel->get_ID($_POST['inputEmail']);
+                    $_SESSION['Username'] = $membersmodel->get_Username($_POST['inputEmail'],$result['Password']);
+                    $_SESSION['ID'] = $membersmodel->get_ID($_SESSION['Username'],$_POST['inputEmail'],$result['Password']);
                     $_SESSION['ProjectID'] = '1'; //wird noch geändert
                     return redirect()->to(base_url() . '/' . 'projects');
                 }
