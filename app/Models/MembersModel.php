@@ -31,6 +31,9 @@
             if (isset($Checked)){
                 $this->db->query('INSERT INTO projekte_mitglieder (projekt_id,mitglieder_id)
                 VALUES ('.$_SESSION['ProjectID'].','.$this->get_ID($Email).')');
+            }else{
+                $this->db->query('DELETE FROM projekte_mitglieder WHERE projekt_id='.$_SESSION['ProjectID'].
+                    ' AND mitglieder_id='.$this->get_ID($Email));
             }
         }
 

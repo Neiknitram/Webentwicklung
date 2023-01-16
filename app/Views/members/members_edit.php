@@ -38,8 +38,8 @@
                 <!-- Assigned to project -->
                 <div class="form-check mb-3 mt-3">
                     <label class="form-check-label" for="checkAssignedProject">Dem Projekt zugeordnet</label>
-                    <input type="checkbox" class="form-check-input mt-1" id="checkAssignedProject"
-                           name="checkAssignedProject">
+                    <input type="checkbox" class="form-check-input mt-1" id="checkProject"
+                           name="checkProject">
                 </div>
                 <!-- Buttons -->
                 <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
