@@ -59,8 +59,4 @@ class Validation extends BaseConfig
             ]
         ]
     ];
-
-    public $login_errors = [
-        'inputEmail' => ['required' => 'Bitte tragen Sie einen Namen ein.'],
-    ];
 }
