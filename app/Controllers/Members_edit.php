@@ -9,6 +9,9 @@ class Members_edit extends BaseController {
     public function index() {
 
         $data['page_title'] = 'Mitglied bearbeiten';
+        $membersmodel = new MembersModel();
+        $data['membersID'] =$membersmodel->getMembersID(1);
+        $data['members'] = $membersmodel->getData();
 
         echo view('templates/header', $data);
         echo view('members/members_edit', $data);
