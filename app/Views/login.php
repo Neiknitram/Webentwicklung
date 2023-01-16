@@ -9,28 +9,39 @@
         <div class="col-6 mx-auto">
             <div class="row">
 
-                <?php echo isset($error) ? $error : ''; ?>
-                <form method="post" action="<?php echo site_url('/Login/login'); ?>">
+
+                <form method="post" action="<?php echo base_url('/login'); ?>">
 
                     <!-- E-Mail input -->
                     <div class="form-group mb-2 mt-4">
                         <label for="inputEmail">Email-Adresse:</label>
-                        <input type="email" class="form-control mt-1" name="inputEmail"
-                               placeholder="Email-Adresse eingeben" required>
+                        <input type="email" class="form-control mt-1 <?= (isset($error['inputEmail']))?'is-invalid':'' ?>" name="inputEmail"
+                               placeholder="Email-Adresse eingeben" value="<?= (isset($login['inputEmail']))?$login['inputEmail']:'' ?>">
+                        <div class="invalid-feedback">
+                            <?= (isset($error['inputEmail']))?$error['inputEmail']:'' ?>
+                        </div>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-group mb-2 mt-2">
                         <label for="inputPassword">Passwort:</label>
-                        <input type="password" class="form-control mt-1" name="inputPassword"
-                               placeholder="Passwort eingeben" required>
+                        <input type="password" class="form-control mt-1 <?= (isset($error['inputPassword']))?'is-invalid':'' ?>" name="inputPassword"
+                               placeholder="Passwort eingeben" value="<?= (isset($login['inputPassword']))?$login['inputPassword']:'' ?>">
+                        <div class="invalid-feedback">
+                            <?= (isset($error['inputPassword']))?$error['inputPassword']:'' ?>
+                        </div>
                     </div>
 
                     <!-- Data privacy checkbox -->
                     <div class="form-check mb-2 mt-2">
                         <label class="form-check-label" for="checkDataprivacy">AGBs und Datenschutzbedingungen
                             akzeptieren</label>
-                        <input type="checkbox" class="form-check-input mt-1" id="checkDataprivacy" required>
+                        <input type="checkbox" class="form-check-input mt-1
+                        <?= (isset($error['checkDataprivacy']))?'is-invalid':'' ?>" name="checkDataprivacy"
+                               id="checkDataprivacy" <?= (isset($login['checkDataprivacy']))?'checked':''?>>
+                        <div class="invalid-feedback">
+                            <?= (isset($error['checkDataprivacy']))?$error['checkDataprivacy']:'' ?>
+                        </div>
                     </div>
 
                     <!-- Login button -->

@@ -41,10 +41,11 @@ $routes->get('tab_edit', 'Tab_edit::index');
 $routes->get('tasks', 'Tasks::index');
 $routes->get('tasks_edit', 'Tasks_edit::index');
 $routes->get('todo', 'Todo::index');
-$routes->post('/Login/login', 'Login::login');
+$routes->post('/login', 'Login::login');
 $routes->post('/membersEdit', 'Members_edit::editMember');
 $routes->post('/membersAdd', 'Members::addMember');
 $routes->get('/membersDelete', 'Members_delete::deleteMember');
+$routes->get('/projects', 'Projects::index');
 
 /*
  * --------------------------------------------------------------------

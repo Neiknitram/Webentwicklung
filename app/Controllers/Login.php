@@ -15,27 +15,28 @@ class Login extends BaseController {
     }
 
     public function login() {
-
-        if (!empty($_POST)) {
-            if (isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
-                $membersmodel = new MembersModel();
-                $results = $membersmodel->login($_POST['inputEmail']);
-
-                foreach ($results as $result) {
-                    var_dump($_POST['inputPassword']);
-                    var_dump( $result['Password']);
-                    if (password_verify($_POST['inputPassword'], $result['Password'])) {
-                        session_start();
-                        $_SESSION['Email']= $_POST['inputEmail'];
-                        $_SESSION['Username'] = $membersmodel->get_Username($_POST['inputEmail']);
-                        $_SESSION['ID'] = $membersmodel->get_ID($_POST['inputEmail']);
-                        return redirect()->to(base_url() . '/'.'projects');
-                    }
+        if ($this->validation->run($_POST,'login_val')) {
+            $membersmodel = new MembersModel();
+            $results = $membersmodel->login($_POST['inputEmail']);
+            foreach ($results as $result) {
+                if (password_verify($_POST['inputPassword'], $result['Password'])) {
+                    session_start();
+                    $_SESSION['Email'] = $_POST['inputEmail'];
+                    $_SESSION['Username'] = $membersmodel->get_Username($_POST['inputEmail']);
+                    $_SESSION['ID'] = $membersmodel->get_ID($_POST['inputEmail']);
+                    return redirect()->to(base_url() . '/' . 'projects');
                 }
             }
-
+            return redirect()->to(base_url() . '/' . 'login');
+        }else {
+            $data['page_title'] = 'Login';
+            $data['login']=$_POST;
+            $data['error']=$this->validation->getErrors();
+            echo view('templates/header', $data);
+            echo view('login', $data);
+            echo view('templates/footer');
         }
-        return redirect()->to(base_url() . '/'.'login');
+
     }
 
     public function logout(){

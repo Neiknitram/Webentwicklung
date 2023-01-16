@@ -42,13 +42,25 @@ class Validation extends BaseConfig
     // Rules
     // --------------------------------------------------------------------
 
-    public $login = [
-        'Username' => 'required',
-        'Email' => 'required',
-        'Password' => 'required',
-        'AGB' => 'required'];
+    public $login_val = [
+        'inputEmail' => ['rules' => 'required',
+            'errors' => [
+                'required' => 'Email is required.'
+            ]
+        ],
+        'inputPassword' => ['rules' => 'required',
+            'errors' => [
+                'required' => 'Password is required.'
+            ]
+        ],
+        'checkDataprivacy' => ['rules' => 'required',
+            'errors' => [
+                'required' => 'AGB is required.'
+            ]
+        ]
+    ];
 
     public $login_errors = [
-        'Username' => ['required' => 'Bitte tragen Sie einen Namen ein.'],
+        'inputEmail' => ['required' => 'Bitte tragen Sie einen Namen ein.'],
     ];
 }
