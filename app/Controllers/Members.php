@@ -10,6 +10,7 @@ class Members extends BaseController {
 
         $data['page_title'] = 'Mitglieder';
         $membersmodel = new MembersModel();
+        $data['membersID'] =$membersmodel->getMembersID(1);
         $data['members'] = $membersmodel->getData();
         //$data['members'] = $this->MembersModel->getData();
 
@@ -26,7 +27,13 @@ class Members extends BaseController {
                 isset($_POST['inputPassword'])) {
                 if(($_POST['inputText']!="") && ($_POST['inputEmail']!="") && ($_POST['inputPassword']!="")) {
                     $membersmodel = new MembersModel();
-                    $membersmodel->addMember($_POST['inputText'], $_POST['inputEmail'], $_POST['inputPassword']);
+                    if (isset($_POST['checkAssignedProject'])) {
+                        $membersmodel->addMember($_POST['inputText'], $_POST['inputEmail'], $_POST['inputPassword'],
+                            $_POST['checkAssignedProject']);
+                    }else{
+                        $membersmodel->addMember($_POST['inputText'], $_POST['inputEmail'], $_POST['inputPassword'],
+                            null);
+                    }
                 }
             }
         }

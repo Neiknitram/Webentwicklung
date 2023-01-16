@@ -24,6 +24,7 @@ class Login extends BaseController {
                     $_SESSION['Email'] = $_POST['inputEmail'];
                     $_SESSION['Username'] = $membersmodel->get_Username($_POST['inputEmail']);
                     $_SESSION['ID'] = $membersmodel->get_ID($_POST['inputEmail']);
+                    $_SESSION['ProjectID'] = '1'; //wird noch geändert
                     return redirect()->to(base_url() . '/' . 'projects');
                 }
             }

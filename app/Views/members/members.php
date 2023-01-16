@@ -30,7 +30,11 @@
                         echo('<td>' . $member['Username'] . '</td>');
                         echo('<td>' . $member['EMail'] . '</td>');
                         echo('<td>
-                                      <input class="form-check-input" type="checkbox" value="" id="item1check">
+                                      <input class="form-check-input" type="checkbox" value="" id="item1check"');
+                        foreach ($membersID as $ID){
+                            if (isset($_SESSION['ID'])&& ($ID['mitglieder_id']==$member['ID'])) echo ('checked');
+                        }
+                        echo(' disabled>
                                       <label class="form-check-label" for="item1check"></label>
                                   </td>');
                         if (isset($_SESSION['ID'])) {
@@ -71,7 +75,8 @@
                     <!-- Assigned to project -->
                     <div class="form-check mb-3 mt-3">
                         <label class="form-check-label" for="checkAssignedProject">Dem Projekt zugeordnet</label>
-                        <input type="checkbox" class="form-check-input mt-1" id="checkAssignedProject">
+                        <input type="checkbox" class="form-check-input mt-1" id="checkAssignedProject"
+                               name="checkAssignedProject">
                     </div>
                     <!-- Buttons -->
                     <button type="submit" name="save" class="btn btn-primary mb-2 mt-2">Speichern</button>
