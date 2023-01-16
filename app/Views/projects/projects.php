@@ -21,7 +21,7 @@
 
                     <!-- Buttons project -->
                     <button type="submit" class="btn btn-primary mb-2 mt-2">Auswählen</button>
-                    <button type="button" class="btn btn-primary mb-2 mt-2">Bearbeiten</button>
+                    <a href="projects_edit" class="btn btn-primary mb-2 mt-2">Bearbeiten</a>
                     <button type="button" class="btn btn-danger mb-2 mt-2">Löschen</button>
 
                     <h4 class="mt-4">Projekt bearbeiten/erstellen:</h4>

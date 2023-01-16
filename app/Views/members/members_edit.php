@@ -41,8 +41,7 @@
                     <input type="checkbox" class="form-check-input mt-1" id="checkAssignedProject">
                 </div>
                 <!-- Buttons -->
-                <a href="#" class="btn btn-success mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</a>
-                <button type="submit" class="btn btn-primary mb-2 mt-2" value="Save">Speichern</button>
+                <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
                 <a href="members" class="btn btn-danger text-light mb-2 mt-2"><i class="fa-solid fa-xmark"></i> Abbrechen</a>
             </form>
         </div>
