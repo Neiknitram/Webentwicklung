@@ -16,9 +16,9 @@
                 <!-- Project description -->
                 <div class="form-group mb-3 mt-3">
                     <div class="form-group mb-2 mt-2">
-                        <label for="inputTextarea">Projektbeschreibung:</label>
+                        <label for="inputTextarea">Beschreibung des Reiters:</label>
                         <textarea class="form-control mt-1" id="inputTextarea" rows="3"
-                                  placeholder="<Projektbeschreibung>"></textarea>
+                                  placeholder="<Beschreibung des Reiters>"></textarea>
                     </div>
                 </div>
             </form>
