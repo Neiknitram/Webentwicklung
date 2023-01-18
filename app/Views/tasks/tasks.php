@@ -34,7 +34,7 @@
                             echo('<td>' . $task['responsible'] . '</td>');
                             echo(' <td class="text-end">
                                 <a href="tasks_edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+                                <a href="tasks_delete"><i class="fa-regular fa-trash-can"></i></a>
                             </td>
                         </tr>');
                         }

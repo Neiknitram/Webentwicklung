@@ -12,7 +12,6 @@ class Members extends BaseController {
         $membersmodel = new MembersModel();
         $data['membersID'] =$membersmodel->getMembersID(1);
         $data['members'] = $membersmodel->getData();
-        //$data['members'] = $this->MembersModel->getData();
 
         echo view('templates/header', $data);
         echo view('members/members', $data);
