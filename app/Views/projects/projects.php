@@ -15,10 +15,21 @@
                     <!-- Select project -->
                     <div class="form-group mb-3 mt-3">
                         <select class="form-select mt-1" aria-label="Default select example" id="selectProject" name="selectProject">
-                            <option value ="" selected disabled>- bitte auswählen -</option>
                             <?php
+                            if(session_id() == '') {
+                                session_start();
+                            }
+                            echo('<option value ="" ');
+                            if (!isset($_SESSION['ProjectID'])) {
+                                echo('selected ');
+                            }
+                            echo('disabled>- bitte auswählen -</option>');
                             foreach ($projects as $project){
-                                echo('<option value="'.$project['ID'].'">'.$project['Name'].'</option>');
+                                echo('<option ');
+                                if(isset($_SESSION['ProjectID'])&&($_SESSION['ProjectID']==$project['ID'])) {
+                                    echo('selected ');
+                                }
+                                echo('value="'.$project['ID'].'">'.$project['Name'].'</option>');
                             }
                             ?>
                         </select>
@@ -35,21 +46,21 @@
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Projektname:</label>
-                        <input class="form-control mt-2" id="inputText" placeholder="Projektname eingeben">
+                        <input class="form-control mt-2" id="inputText". name="name" placeholder="Projektname eingeben">
                     </div>
 
                     <!-- Project description -->
                     <div class="form-group mb-3 mt-3">
                         <div class="form-group mb-2 mt-2">
                             <label for="inputTextarea">Projektbeschreibung:</label>
-                            <textarea class="form-control mt-2" id="inputTextarea" rows="3"
+                            <textarea class="form-control mt-2" id="inputTextarea" name="text" rows="3"
                                       placeholder="Projektbeschreibung eingeben"></textarea>
                         </div>
                     </div>
 
                     <!-- Buttons -->
-                    <button type="button" class="btn btn-primary mb-2 mt-2">Speichern</button>
-                    <button type="button" class="btn btn-info text-light mb-2 mt-2">Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2">Speichern</button>
+                    <button type="button" name="reset" class="btn btn-info text-light mb-2 mt-2">Reset</button>
 
                 </form>
 

@@ -5,4 +5,9 @@ class ProjectsModel extends Model {
         $result = $this->db->query('SELECT ID,Name FROM projekte');
         return $result->getResultArray();
     }
+
+    public function addProject($name, $text) {
+        $this->db->query('INSERT INTO projekte (Name,Beschreibung,Ersteller)
+                VALUES ("'.$name.'","'.$text.'","'.$_SESSION['ID'].'");');
+    }
 }

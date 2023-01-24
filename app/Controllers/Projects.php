@@ -27,7 +27,15 @@ class Projects extends BaseController {
     }
 
     public function add(){
+        session_start();
+        if(isset($_POST['save'])) {
+            if (isset($_POST['name']) && isset($_POST['text'])) {
+                $projectsModel = new ProjectsModel();
+                $projectsModel->addProject($_POST['name'],$_POST['text']);
+            }
+        }
 
+        return redirect()->to(base_url() . '/'.'projects');
     }
 
 }

@@ -8,7 +8,9 @@
                 <li class="list-group-item"><a href="../login">Login</a></li>
                 <li class="list-group-item"><a href="../projects">Projekte</a></li>
                 <?php
-                session_start();
+                if(session_id() == '') {
+                    session_start();
+                }
                 if(isset($_SESSION['ProjectID'])) {
                     echo('<li class="list-group-item"><a href="../todo">Aktuelles Projekt</a></li>');
                     echo('<li class="list-group-item menu-indented"><a href="../tab">Reiter</a></li>

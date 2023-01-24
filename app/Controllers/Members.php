@@ -7,10 +7,10 @@ use App\Models\MembersModel;
 class Members extends BaseController {
 
     public function index() {
-
+        session_start();
         $data['page_title'] = 'Mitglieder';
         $membersmodel = new MembersModel();
-        $data['membersID'] =$membersmodel->getMembersID(1);
+        $data['membersID'] =$membersmodel->getMembersID($_SESSION['ProjectID']);
         $data['members'] = $membersmodel->getData();
 
         echo view('templates/header', $data);

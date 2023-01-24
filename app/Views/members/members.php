@@ -24,7 +24,6 @@
                     <!-- Load Memberlist -->
                     <tbody>
                     <?php
-                    session_start();
                     foreach ($members as $member) {
                         echo "<tr>";
                         echo('<td>' . $member['Username'] . '</td>');
