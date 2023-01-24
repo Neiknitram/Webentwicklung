@@ -52,6 +52,7 @@ $routes->get('/projects', 'Projects::index');
 $routes->post('/select_projects', 'Projects::select');
 $routes->post('/add_projects', 'Projects::add');
 $routes->post('/edit_projects', 'Projects_edit::editProject');
+$routes->post('/interact_projects', 'Projects::interact');
 
 /*
  * --------------------------------------------------------------------
