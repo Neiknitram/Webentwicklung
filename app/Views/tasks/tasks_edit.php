@@ -1,10 +1,13 @@
 <!-- Main container -->
 <div class="container-fluid">
 
-    <?php echo view('templates/headline'); ?>
+    <div class="col-6 card mx-auto mt-5">
+        <div class="card-header">
+            Aufgabenplaner: <?php echo $page_title ?>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-uppercase">Datensatz bearbeiten:</h5>
 
-    <div class="row">
-        <div class="col-6 mx-auto border rounded">
             <form>
                 <!-- Project name -->
                 <div class="form-group mb-3 mt-3">
@@ -52,11 +55,14 @@
                         <option>Petra Müller</option>
                     </select>
                 </div>
-                <!-- Buttons -->
+
+            </form>
+
+            <div class="buttons text-end">
                 <a href="#" class="btn btn-success mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</a>
                 <a href="tasks" class="btn btn-danger text-light mb-2 mt-2"><i class="fa-solid fa-xmark"></i> Abbrechen</a>
-            </form>
+            </div>
+
         </div>
     </div>
-
 </div>

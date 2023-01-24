@@ -30,7 +30,7 @@
                             echo('<td>' . $tab['description'] . '</td>');
                             echo(' <td class="text-end">
                                 <a href="tab_edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="#"><i class="fa-regular fa-trash-can"></i></a>
+                                <a href="tab_delete"><i class="fa-regular fa-trash-can"></i></a>
                             </td>
                         </tr>');
                         }
@@ -53,9 +53,9 @@
                     <!-- Project description -->
                     <div class="form-group mb-3 mt-3">
                         <div class="form-group mb-2 mt-2">
-                            <label for="inputTextarea">Projektbeschreibung:</label>
+                            <label for="inputTextarea">Beschreibung des Reiters:</label>
                             <textarea class="form-control mt-1" id="inputTextarea" rows="3"
-                                      placeholder="Projektbeschreibung eingeben"></textarea>
+                                      placeholder="Beschreibung des Reiters eingeben"></textarea>
                         </div>
                     </div>
 

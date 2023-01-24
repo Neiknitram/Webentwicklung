@@ -1,13 +1,18 @@
 <!-- Main container -->
 <div class="container-fluid">
 
-    <?php echo view('templates/headline');
+    <?php
     session_start();
     ?>
 
-    <div class="row">
-        <div class="col-6 mx-auto border rounded">
+    <div class="col-6 card mx-auto mt-5">
+        <div class="card-header">
+            Aufgabenplaner: <?php echo $page_title ?>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title text-uppercase">Datensatz bearbeiten:</h5>
             <form method="post" action="<?php echo site_url('/membersEdit'); ?>">
+
                 <!-- Username input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputText">Benutzername:</label>
@@ -18,6 +23,7 @@
                     echo('">');
                     ?>
                 </div>
+
                 <!-- E-Mail input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputEmail">Email-Adresse:</label>
@@ -28,12 +34,14 @@
                     echo('">');
                     ?>
                 </div>
+
                 <!-- Password input -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputPassword">Passwort:</label>
                     <input type="password" class="form-control mt-1" id="inputPassword" name="inputPassword"
                            placeholder="<Passwort>">
                 </div>
+
                 <!-- Assigned to project -->
                 <div class="form-check mb-3 mt-3">
                     <label class="form-check-label" for="checkAssignedProject">Dem Projekt zugeordnet</label>
@@ -46,9 +54,12 @@
                     echo('>');
                     ?>
                 </div>
+
                 <!-- Buttons -->
-                <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
-                <a href="members" class="btn btn-danger text-light mb-2 mt-2"><i class="fa-solid fa-xmark"></i> Abbrechen</a>
+                <div class="buttons text-end">
+                    <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
+                    <a href="members" class="btn btn-danger text-light mb-2 mt-2"><i class="fa-solid fa-xmark"></i> Abbrechen</a>
+                </div>
             </form>
         </div>
     </div>
