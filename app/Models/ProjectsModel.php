@@ -7,8 +7,10 @@ class ProjectsModel extends Model {
     }
 
     public function addProject($name, $text) {
-        $this->db->query('INSERT INTO projekte (Name,Beschreibung,Ersteller)
-                VALUES ("'.$name.'","'.$text.'","'.$_SESSION['ID'].'");');
+        if(isset($_SESSION['ID'])) {
+            $this->db->query('INSERT INTO projekte (Name,Beschreibung,Ersteller)
+                VALUES ("' . $name . '","' . $text . '","' . $_SESSION['ID'] . '");');
+        }
     }
 
     public function deleteProject($ID) {
