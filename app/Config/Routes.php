@@ -36,6 +36,7 @@ $routes->get('members_edit', 'Members_edit::index');
 $routes->get('members_delete', 'Members_delete::index');
 $routes->get('projects', 'Projects::index');
 $routes->get('projects_edit', 'Projects_edit::index');
+$routes->get('projects_delete', 'Projects_delete::index');
 $routes->get('register', 'Register::index');
 $routes->get('tab', 'Tab::index');
 $routes->get('tab_edit', 'Tab_edit::index');
