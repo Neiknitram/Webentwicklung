@@ -40,7 +40,7 @@
                     <button type="submit" name="edit" class="btn btn-primary mb-2 mt-2">Bearbeiten</button>
                     <button type="submit" name="delete" class="btn btn-danger mb-2 mt-2">Löschen</button>
                 </form>
-                <form action="<?php echo site_url('/interact_projects'); ?>" method="post">
+                <form action="<?php echo site_url('/add_projects'); ?>" method="post">
                     <h4 class="mt-4">Projekt erstellen:</h4>
 
                     <!-- Project name -->

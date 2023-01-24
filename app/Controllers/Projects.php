@@ -42,7 +42,7 @@ class Projects extends BaseController {
         return redirect()->to(base_url() . '/' . 'projects');
     }
 
-    public function interact(){
+    public function add(){
         session_start();
         if(isset($_POST['save'])) {
             if (isset($_POST['name']) && isset($_POST['text'])) {
