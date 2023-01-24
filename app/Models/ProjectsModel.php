@@ -14,4 +14,14 @@ class ProjectsModel extends Model {
     public function deleteProject($ID) {
         $this->db->query('DELETE FROM projekte WHERE ID="'.$ID.'"');
     }
+
+    public function getProjectName($ID){
+        $result = $this->db->query('SELECT Name FROM projekte WHERE ID = "'.$ID.'"');
+        return $result->getResultArray()[0]['Name'];
+    }
+
+    public function getProjectDescription($ID){
+        $result = $this->db->query('SELECT Beschreibung FROM projekte WHERE ID = "'.$ID.'"');
+        return $result->getResultArray()[0]['Beschreibung'];
+    }
 }

@@ -10,7 +10,13 @@
                 <!-- Project name -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputText">Projektname:</label>
-                    <input class="form-control mt-2" id="inputText" placeholder="<Projektname>">
+                    <?php
+                    echo('<input class="form-control mt-2" id="inputText" placeholder="<Projektname>"');
+                    if(isset($name)){
+                        echo(' value="'.$name.'"');
+                    }
+                    echo('>')
+                    ?>
                 </div>
 
                 <!-- Project description -->
@@ -18,7 +24,11 @@
                     <div class="form-group mb-2 mt-2">
                         <label for="inputTextarea">Projektbeschreibung:</label>
                         <textarea class="form-control mt-2" id="inputTextarea" rows="3"
-                                  placeholder="<Projektbeschreibung>"></textarea>
+                                  placeholder="<Projektbeschreibung>"><?php
+                            if(isset($description)){
+                                echo($description);
+                            }
+                            ?></textarea>
                     </div>
                 </div>
 

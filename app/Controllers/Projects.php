@@ -34,6 +34,10 @@ class Projects extends BaseController {
                     }
                 }
             }
+        }else if(isset($_POST['edit'])){
+            session_start();
+            $_SESSION['projectEditID']=$_POST['selectProject'];
+            return redirect()->to(base_url() . '/' . 'projects_edit');
         }
         return redirect()->to(base_url() . '/' . 'projects');
     }
