@@ -10,4 +10,8 @@ class ProjectsModel extends Model {
         $this->db->query('INSERT INTO projekte (Name,Beschreibung,Ersteller)
                 VALUES ("'.$name.'","'.$text.'","'.$_SESSION['ID'].'");');
     }
+
+    public function deleteProject($ID) {
+        $this->db->query('DELETE FROM projekte WHERE ID="'.$ID.'"');
+    }
 }

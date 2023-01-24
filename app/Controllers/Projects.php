@@ -16,17 +16,29 @@ class Projects extends BaseController {
     }
 
     public function select(){
-        if(isset($_POST['submit'])) {
+        if(isset($_POST['select'])) {
             if (!empty($_POST['selectProject'])) {
                 session_start();
                 $_SESSION['ProjectID']=$_POST['selectProject'];
                 return redirect()->to(base_url() . '/' . 'todo');
             }
         }
+        else if(isset($_POST['delete'])){
+            if (!empty($_POST['selectProject'])) {
+                $projektsModel = new ProjectsModel();
+                $projektsModel->deleteProject($_POST['selectProject']);
+                session_start();
+                if (isset($_SESSION['ProjectID'])) {
+                    if ($_POST['selectProject'] == $_SESSION['ProjectID']){
+                        unset($_SESSION['ProjectID']);
+                    }
+                }
+            }
+        }
         return redirect()->to(base_url() . '/' . 'projects');
     }
 
-    public function add(){
+    public function interact(){
         session_start();
         if(isset($_POST['save'])) {
             if (isset($_POST['name']) && isset($_POST['text'])) {
@@ -34,6 +46,7 @@ class Projects extends BaseController {
                 $projectsModel->addProject($_POST['name'],$_POST['text']);
             }
         }
+
 
         return redirect()->to(base_url() . '/'.'projects');
     }
