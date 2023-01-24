@@ -24,4 +24,8 @@ class ProjectsModel extends Model {
         $result = $this->db->query('SELECT Beschreibung FROM projekte WHERE ID = "'.$ID.'"');
         return $result->getResultArray()[0]['Beschreibung'];
     }
+
+    public function editProject($ID,$name,$text){
+        $this->db->query('UPDATE projekte SET Name = "'.$name.'", Beschreibung= "'.$text.'" WHERE ID = "'.$ID.'"');
+    }
 }

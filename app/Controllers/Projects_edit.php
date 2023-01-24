@@ -24,4 +24,18 @@ class Projects_edit extends BaseController {
 
     }
 
+    public function editProject(){
+        if(session_id() == '') {
+            session_start();
+        }
+        if (isset($_POST['name']) && isset($_SESSION['projectEditID'])) {
+            $projectsModel = new ProjectsModel();
+            $projectsModel->editProject($_SESSION['projectEditID'], $_POST['name'], $_POST['text']);
+
+        }
+
+
+        return redirect()->to(base_url() . '/'.'projects');
+    }
+
 }

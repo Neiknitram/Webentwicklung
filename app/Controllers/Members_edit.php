@@ -20,7 +20,6 @@ class Members_edit extends BaseController {
     }
 
     public function editMember() {
-        session_start();
         if (isset($_POST['inputText']) && isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
             $membersmodel = new MembersModel();
             if(isset($_POST['checkProject'])) {
