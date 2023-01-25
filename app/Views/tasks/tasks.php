@@ -28,10 +28,21 @@
                     <?php
                         foreach ($tasks as $task) {
                         echo "<tr>";
-                            echo('<td>' . $task['name'] . '</td>');
-                            echo('<td>' . $task['description'] . '</td>');
-                            echo('<td>' . $task['tab'] . '</td>');
-                            echo('<td>' . $task['responsible'] . '</td>');
+                            echo('<td>' );
+                            if (isset($task['Name'])) echo($task['Name']);
+                            echo('</td>');
+
+                            echo('<td>' );
+                            if (isset($task['Beschreibung'])) echo($task['Beschreibung']);
+                            echo('</td>');
+
+                            echo('<td>' );
+                            if (isset($task['reiter'])) echo($task['reiter']);
+                            echo('</td>');
+
+                            echo('<td>' );
+                            if (isset($task['Username1'])) echo($task['Username1']);
+                            echo('</td>');
                             echo(' <td class="text-end">
                                 <a href="tasks_edit"><i class="fa-regular fa-pen-to-square"></i></a>
                                 <a href="tasks_delete"><i class="fa-regular fa-trash-can"></i></a>
@@ -45,20 +56,20 @@
             </div>
 
             <div class="row">
-                <form>
-                    <h4 class="mt-4">Bearbeiten/Erstellen:</h4>
+                <form method="post" action="<?php echo site_url('/tasksAdd'); ?>">
+                    <h4 class="mt-4">Erstellen:</h4>
 
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Aufgabenbezeichnung:</label>
-                        <input class="form-control mt-1" id="inputText" placeholder="Aufgabenbezeichnung eingeben">
+                        <input class="form-control mt-1" id="inputText" name="Name" placeholder="Aufgabenbezeichnung eingeben">
                     </div>
 
                     <!-- Project description -->
                     <div class="form-group mb-3 mt-3">
                         <div class="form-group mb-2 mt-2">
                             <label for="inputTextarea">Beschreibung der Aufgabe:</label>
-                            <textarea class="form-control mt-1" id="inputTextarea" rows="3"
+                            <textarea class="form-control mt-1" id="inputTextarea" name="Beschreibung" rows="3"
                                       placeholder="Beschreibung der Aufgabe eingeben"></textarea>
                         </div>
                     </div>
@@ -67,7 +78,7 @@
                     <div class="form-group mb-3 mt-3">
                         <div class="form-group mb-2 mt-2">
                             <label for="inputDateCreation">Erstellungsdatum:</label>
-                            <input type="date" class="form-control mt-1" id="inputDateCreation">
+                            <input type="date" name="Erstellungsdatum" class="form-control mt-1" id="inputDateCreation">
                         </div>
                     </div>
 
@@ -75,18 +86,18 @@
                     <div class="form-group mb-3 mt-3">
                         <div class="form-group mb-2 mt-2">
                             <label for="inputDateDue">Fällig bis:</label>
-                            <input type="date" class="form-control mt-1" id="inputDateDue">
+                            <input type="date" name="Faelligkeitsdatum" class="form-control mt-1" id="inputDateDue">
                         </div>
                     </div>
 
                     <!-- Select tab -->
                     <div class="form-group mb-3 mt-3">
                         <label for="selectTab">Zugehöriger Reiter:</label>
-                        <select class="form-select mt-1" aria-label="Default select example" id="selectTab">
+                        <select name="reiter" class="form-select mt-1" aria-label="Default select example" id="selectTab">
                             <option selected disabled>- bitte auswählen -</option>
-                            <option>ToDo</option>
-                            <option>Erledigt</option>
-                            <option>Verschoben</option>
+                            <option value="0">ToDo</option>
+                            <option value="1">Erledigt</option>
+                            <option value="2">Verschoben</option>
                         </select>
                     </div>
 
@@ -101,7 +112,7 @@
                     </div>
 
                     <!-- Buttons -->
-                    <button type="button" class="btn btn-primary mb-5 mt-2">Speichern</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-5 mt-2">Speichern</button>
                     <button type="button" class="btn btn-info text-light mb-5 mt-2">Reset</button>
 
                 </form>
