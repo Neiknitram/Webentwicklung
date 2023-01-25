@@ -17,9 +17,13 @@
             return $result->getResultArray()[0]['Username'];
         }
 
+        public function get_Username_with_ID($ID){
+            $result = $this->db->query('SELECT Username FROM mitglieder WHERE ID = "'.$ID.'"');
+            return $result->getResultArray()[0]['Username'];
+        }
+
         public function get_ID($Username,$Email, $Password){
             $result = $this->db->query('SELECT ID FROM mitglieder WHERE EMail = "'.$Email.'" AND Password="'.$Password.'" AND Username="'.$Username.'"');
-            var_dump($result->getResultArray());
             return $result->getResultArray()[0]['ID'];
         }
 

@@ -29,7 +29,7 @@
                         foreach ($tasks as $task) {
                         echo "<tr>";
                             echo('<td>' );
-                            if (isset($task['Name'])) echo($task['Name']);
+                            if (isset($task['Name1'])) echo($task['Name1']);
                             echo('</td>');
 
                             echo('<td>' );
@@ -37,11 +37,11 @@
                             echo('</td>');
 
                             echo('<td>' );
-                            if (isset($task['reiter'])) echo($task['reiter']);
+                            if (isset($task['Name'])) echo($task['Name']);
                             echo('</td>');
 
                             echo('<td>' );
-                            if (isset($task['Username1'])) echo($task['Username1']);
+                            if (isset($task['Username'])) echo($task['Username']);
                             echo('</td>');
                             echo(' <td class="text-end">
                                 <a href="tasks_edit"><i class="fa-regular fa-pen-to-square"></i></a>
@@ -95,19 +95,22 @@
                         <label for="selectTab">Zugehöriger Reiter:</label>
                         <select name="reiter" class="form-select mt-1" aria-label="Default select example" id="selectTab">
                             <option selected disabled>- bitte auswählen -</option>
-                            <option value="0">ToDo</option>
-                            <option value="1">Erledigt</option>
-                            <option value="2">Verschoben</option>
+                            <option value="1">ToDo</option>
+                            <option value="2">Erledigt</option>
+                            <option value="3">Verschoben</option>
                         </select>
                     </div>
 
                     <!-- Select member -->
                     <div class="form-group mb-3 mt-3">
                         <label for="selectMember">Zuständig:</label>
-                        <select class="form-select mt-1" aria-label="Default select example" id="selectMember">
+                        <select class="form-select mt-1" aria-label="Default select example" id="selectMember" name="member">
                             <option selected disabled>- bitte auswählen -</option>
-                            <option>Max Mustermann</option>
-                            <option>Petra Müller</option>
+                            <?php
+                            foreach ($members as $member){
+                                echo('<option value="'.$member['ID'].'">'.$member['Username'].'</option>');
+                            }
+                            ?>
                         </select>
                     </div>
 
