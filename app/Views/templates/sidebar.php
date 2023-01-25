@@ -12,7 +12,9 @@
                     session_start();
                 }
                 if(isset($_SESSION['ProjectID'])) {
-                    echo('<li class="list-group-item"><a href="../todo">Aktuelles Projekt</a></li>');
+                    echo('<li class="list-group-item"><a href="../todo">');
+                    echo($_SESSION['ProjectName']);
+                    echo('</a></li>');
                     echo('<li class="list-group-item menu-indented"><a href="../tab">Reiter</a></li>
                             <li class="list-group-item menu-indented"><a href="../tasks">Aufgaben</a></li>
                             <li class="list-group-item menu-indented"><a href="../members">Mitglieder</a></li>');

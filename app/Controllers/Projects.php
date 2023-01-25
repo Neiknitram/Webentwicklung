@@ -20,6 +20,8 @@ class Projects extends BaseController {
             if (!empty($_POST['selectProject'])) {
                 session_start();
                 $_SESSION['ProjectID']=$_POST['selectProject'];
+                $projektsModel = new ProjectsModel();
+                $_SESSION['ProjectName']=$projektsModel->getProjectName($_SESSION['ProjectID']);
                 return redirect()->to(base_url() . '/' . 'todo');
             }
         }
@@ -31,6 +33,7 @@ class Projects extends BaseController {
                 if (isset($_SESSION['ProjectID'])) {
                     if ($_POST['selectProject'] == $_SESSION['ProjectID']){
                         unset($_SESSION['ProjectID']);
+                        unset($_SESSION['ProjectName']);
                     }
                 }
             }
