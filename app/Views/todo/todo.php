@@ -14,43 +14,27 @@
             <div class="row">
 
                 <!-- Card 01 -->
-                <div class="col">
+                <?php
+                foreach ($tabID as $tab){
+                    echo('<div class="col">
                     <div class="card">
-                        <div class="card-header">
-                            ToDo:
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">HTML Datei erstellen (Max Mustermann)</li>
-                            <li class="list-group-item">CSS Datei erstellen (Max Mustermann)</li>
-                        </ul>
+                        <div class="card-header">');
+                    echo($tab['Name']);
+                    echo('</div>
+                        <ul class="list-group list-group-flush">');
+                    foreach ($todo as $card){
+                        if($card['ID']==$tab['ID']){
+                            echo('<li class="list-group-item">');
+                            echo($card['Name1'].' ('.$card['Username'].')');
+                            echo('</li>');
+                        }
+                    }
+                    echo('</ul>
                     </div>
-                </div>
+                </div>');
 
-                <!-- Card 02 -->
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            Erledigt:
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">PC eingeschaltet (Petra Müller)</li>
-                            <li class="list-group-item">Kaffee trinken (Petra Müller)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Card 03 -->
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            Verschoben:
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Für die Uni lernen (Max Mustermann)</li>
-                        </ul>
-                    </div>
-                </div>
-
+                }
+                ?>
             </div>
         </div>
     </div>
