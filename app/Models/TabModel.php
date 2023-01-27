@@ -17,4 +17,9 @@ class TabModel extends Model {
     public function editTab($ID, $name, $description){
         $this->db->query('UPDATE reiter SET Name="'.$name.'", Beschreibung="'.$description.'" Where ID='.$ID);
     }
+
+    public function addTab($name, $description){
+        $this->db->query('INSERT INTO reiter (Name,Beschreibung)
+                VALUES ("'.$name.'","'.$description.'");');
+    }
 }

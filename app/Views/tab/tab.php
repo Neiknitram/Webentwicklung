@@ -43,27 +43,27 @@
             </div>
 
             <div class="row">
-                <form>
-                    <h4 class="mt-4">Bearbeiten/Erstellen:</h4>
+                <form action="<?php echo site_url('/tabAdd'); ?>" method="post">
+                    <h4 class="mt-4">Erstellen:</h4>
 
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Bezeichnung des Reiters:</label>
-                        <input class="form-control" id="inputText" placeholder="Bezeichnung des Reiters eingeben">
+                        <input class="form-control" id="inputText" name="Name" placeholder="Bezeichnung des Reiters eingeben">
                     </div>
 
                     <!-- Project description -->
                     <div class="form-group mb-3 mt-3">
                         <div class="form-group mb-2 mt-2">
                             <label for="inputTextarea">Beschreibung des Reiters:</label>
-                            <textarea class="form-control mt-1" id="inputTextarea" rows="3"
+                            <textarea class="form-control mt-1" id="inputTextarea" name="Beschreibung" rows="3"
                                       placeholder="Beschreibung des Reiters eingeben"></textarea>
                         </div>
                     </div>
 
                     <!-- Buttons -->
-                    <button type="button" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
-                    <button type="button" class="btn btn-info text-light mb-2 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
+                    <button type="submit" class="btn btn-info text-light mb-2 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
 
                 </form>
 

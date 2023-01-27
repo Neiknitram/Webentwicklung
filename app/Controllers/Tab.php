@@ -9,21 +9,6 @@ class Tab extends BaseController {
     public function index() {
 
         $data['page_title'] = 'Reiter';
-        /*
-        $data['tabs'] = array(
-            array(
-                'name' => 'ToDo',
-                'description' => 'Dinge die erledigt werden müssen.',
-            ),
-            array(
-                'name' => 'Erledigt',
-                'description' => 'Dinge die erledigt sind.',
-            ),
-            array(
-                'name' => 'Verschoben',
-                'description' => 'Dinge die später erledigt werden.',
-            )
-        );*/
 
         $tabModel = new TabModel();
         $data['tabs']=$tabModel->getData();
@@ -31,6 +16,18 @@ class Tab extends BaseController {
         echo view('templates/header', $data);
         echo view('tab/tab', $data);
         echo view('templates/footer');
+    }
+
+    public function addTab(){
+        session_start();
+        if(isset($_POST['save'])) {
+            if (isset($_POST['Name']) && isset($_POST['Beschreibung']) && $_POST['Name']!="" && $_POST['Beschreibung']!=""){
+                $tabModel = new TabModel();
+                $tabModel->addTab($_POST['Name'],$_POST['Beschreibung']);
+            }
+        }
+        return redirect()->to(base_url() . '/'.'tab');
+
     }
 
 }
