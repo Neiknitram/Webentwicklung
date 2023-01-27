@@ -40,8 +40,11 @@ class Login extends BaseController {
     }
 
     public function logout(){
-        session()->destroy();
+        if(isset($_SESSION['ProjectID'])) unset($_SESSION['ProjectID']);
+        if(isset($_SESSION)) {
+            session_unset();
+            session_destroy();
+        }
         return redirect()->to(base_url().'/'.'login');
     }
-
 }

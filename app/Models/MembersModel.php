@@ -31,7 +31,7 @@
             if(session_id() == '') {
                 session_start();
             }
-            if(isset($Username) && isset($Email) && isset($Password)) {
+            if(isset($Username) && isset($Email) && isset($Password) && $Password != "") {
                 $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
                 $this->db->query('UPDATE mitglieder SET Username = "' . $Username . '", EMail= "' . $Email . '", Password= "' .
                     $hashedPassword . '" WHERE ID = ' . $_SESSION['ID'] . ';');

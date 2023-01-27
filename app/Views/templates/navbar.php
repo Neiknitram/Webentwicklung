@@ -33,7 +33,7 @@
                 ?>
             </ul>
 
-            <form class="d-flex">
+            <form action="<?php echo site_url('/logout'); ?>" method="post" class="d-flex">
                 <button class="btn btn-primary"><i class="fa-solid fa-arrow-right-from-bracket"></i> Ausloggen</button>
             </form>
 

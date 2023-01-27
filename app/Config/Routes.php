@@ -57,6 +57,7 @@ $routes->post('/projectsDelete', 'Projects_delete::deleteProject');
 $routes->post('/tasksAdd', 'Tasks::addTask');
 $routes->post('/tasksDelete', 'Tasks_delete::deleteTask');
 $routes->post('/tasksEdit', 'Tasks_edit::editTask');
+$routes->post('/logout', 'Login::logout');
 
 
 /*
