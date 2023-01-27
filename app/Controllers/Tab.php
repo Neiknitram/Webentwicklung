@@ -2,11 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Models\TabModel;
+
 class Tab extends BaseController {
 
     public function index() {
 
         $data['page_title'] = 'Reiter';
+        /*
         $data['tabs'] = array(
             array(
                 'name' => 'ToDo',
@@ -20,7 +23,10 @@ class Tab extends BaseController {
                 'name' => 'Verschoben',
                 'description' => 'Dinge die später erledigt werden.',
             )
-        );
+        );*/
+
+        $tabModel = new TabModel();
+        $data['tabs']=$tabModel->getData();
 
         echo view('templates/header', $data);
         echo view('tab/tab', $data);

@@ -28,8 +28,8 @@
                         <?php
                         foreach ($tabs as $tab) {
                         echo "<tr>";
-                            echo('<td>' . $tab['name'] . '</td>');
-                            echo('<td>' . $tab['description'] . '</td>');
+                            echo('<td>' . $tab['Name'] . '</td>');
+                            echo('<td>' . $tab['Beschreibung'] . '</td>');
                             echo(' <td class="text-end">
                                 <a href="tab_edit"><i class="fa-regular fa-pen-to-square"></i></a>
                                 <a href="tab_delete"><i class="fa-regular fa-trash-can"></i></a>
