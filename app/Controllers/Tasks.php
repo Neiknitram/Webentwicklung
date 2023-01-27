@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MembersModel;
+use App\Models\TabModel;
 use App\Models\TasksModel;
 
 class Tasks extends BaseController {
@@ -16,6 +17,9 @@ class Tasks extends BaseController {
 
         $membersModel = new MembersModel();
         $data['members'] = $membersModel->getData();
+
+        $tabModel = new TabModel();
+        $data['tabs'] = $tabModel->getData();
 
         echo view('templates/header', $data);
         echo view('tasks/tasks', $data);

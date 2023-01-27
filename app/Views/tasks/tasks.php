@@ -103,9 +103,11 @@
                         <label for="selectTab">Zugehöriger Reiter:</label>
                         <select name="reiter" class="form-select mt-1" aria-label="Default select example" id="selectTab">
                             <option selected disabled>- bitte auswählen -</option>
-                            <option value="1">ToDo</option>
-                            <option value="2">Erledigt</option>
-                            <option value="3">Verschoben</option>
+                            <?php
+                            foreach ($tabs as $tab){
+                                echo(' <option value="'.$tab['ID'].'">'.$tab['Name'].'</option>');
+                            }
+                            ?>
                         </select>
                     </div>
 

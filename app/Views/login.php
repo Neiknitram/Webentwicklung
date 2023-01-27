@@ -51,7 +51,7 @@
                     <!-- Help text -->
                     <small class="form-text text-muted">
                         Noch nicht registriert? <a href="register">Registrierung</a><br>
-                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="todo">Überspringen</a>
+                        Da der Login Vorgang technisch noch nicht realisiert wurde: <a href="projects">Überspringen</a>
                     </small>
 
                 </form>
