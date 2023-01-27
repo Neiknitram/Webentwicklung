@@ -45,7 +45,7 @@
                     </div>
 
                     <!-- Login button -->
-                    <button type="submit" class="btn btn-primary mb-2 mt-2" value="Login">Einloggen</button>
+                    <button type="submit" class="btn btn-primary mb-2 mt-2" value="Login">Einloggen <i class="fa-solid fa-right-to-bracket"></i></button>
                     <br>
 
                     <!-- Help text -->
