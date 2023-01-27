@@ -45,11 +45,17 @@
                             echo('<td>' );
                             if (isset($task['Username'])) echo($task['Username']);
                             echo('</td>');
-                            echo(' <td class="text-end">
-                                <a href="tasks_edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="tasks_delete"><i class="fa-regular fa-trash-can"></i></a>
-                            </td>
-                        </tr>');
+
+                            echo(' <td class="text-end">');
+                            if(session_id() == '') {
+                                session_start();
+                            }
+                            if(isset($_SESSION['ID'])) {
+                                echo(' <a href="tasks_edit?task='.$task['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="tasks_delete?task='.$task['ID'].'"><i class="fa-regular fa-trash-can"></i></a>');
+                            }
+                            echo('</td>
+                            </tr>');
                         }
                         ?>
                     </tbody>

@@ -55,6 +55,9 @@ $routes->post('/add_projects', 'Projects::add');
 $routes->post('/edit_projects', 'Projects_edit::editProject');
 $routes->post('/projectsDelete', 'Projects_delete::deleteProject');
 $routes->post('/tasksAdd', 'Tasks::addTask');
+$routes->post('/tasksDelete', 'Tasks_delete::deleteTask');
+$routes->post('/tasksEdit', 'Tasks_edit::editTask');
+
 
 /*
  * --------------------------------------------------------------------
