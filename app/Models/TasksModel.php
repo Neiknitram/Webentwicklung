@@ -20,9 +20,12 @@ class TasksModel extends Model {
         $result = $this->db->query('Select
     aufgaben.ID,
     mitglieder.Username,
+    mitglieder.ID As UserID,
     reiter.Name,
     aufgaben.Name As Name1,
     aufgaben.Beschreibung,
+    aufgaben.Erstellungsdatum,
+    aufgaben.Faelligkeitsdatum,
     aufgaben.ID
     From
     aufgaben_mitglieder Inner Join
@@ -52,6 +55,12 @@ class TasksModel extends Model {
 
     public function deleteTask($ID){
         $this->db->query('DELETE FROM aufgaben WHERE ID="'.$ID.'"');
+    }
+
+    public function editTask($ID, $name, $description, $date1, $date2, $reiter, $userID, $lastUserID){
+        $this->db->query('UPDATE aufgaben SET Name="'.$name.'", Beschreibung="'.$description.'", Erstellungsdatum="'
+            .$date1.'", Faelligkeitsdatum="'.$date2.'", reiter="'.$reiter.'" Where ID='.$ID);
+        $this->db->query('UPDATE aufgaben_mitglieder SET aufgaben_id="'.$ID.'", mitglieder_id="'.$userID.'" Where aufgaben_id='.$ID.' And mitglieder_id='.$lastUserID);
     }
 
 }
