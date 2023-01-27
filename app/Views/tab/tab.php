@@ -62,8 +62,8 @@
                     </div>
 
                     <!-- Buttons -->
-                    <button type="button" class="btn btn-primary mb-2 mt-2">Speichern</button>
-                    <button type="button" class="btn btn-info text-light mb-2 mt-2">Reset</button>
+                    <button type="button" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
+                    <button type="button" class="btn btn-info text-light mb-2 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
 
                 </form>
 

@@ -38,9 +38,9 @@
                     </div>
 
                     <!-- Buttons project -->
-                    <button type="submit" name="select" class="btn btn-primary mb-2 mt-2">Auswählen</button>
-                    <button type="submit" name="edit" class="btn btn-primary mb-2 mt-2">Bearbeiten</button>
-                    <button type="submit" name="delete" class="btn btn-danger mb-2 mt-2">Löschen</button>
+                    <button type="submit" name="select" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-hand-pointer"></i> Auswählen</button>
+                    <button type="submit" name="edit" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-pen-to-square"></i> Bearbeiten</button>
+                    <button type="submit" name="delete" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Löschen</button>
                 </form>
                 <form action="<?php echo site_url('/add_projects'); ?>" method="post">
                     <h4 class="mt-4">Projekt erstellen:</h4>
@@ -61,8 +61,8 @@
                     </div>
 
                     <!-- Buttons -->
-                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2">Speichern</button>
-                    <button type="button" name="reset" class="btn btn-info text-light mb-2 mt-2">Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
+                    <button type="button" name="reset" class="btn btn-info text-light mb-2 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
 
                 </form>
 
