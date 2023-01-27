@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MembersModel;
+use App\Models\TabModel;
 use App\Models\TasksModel;
 
 class Tasks_edit extends BaseController {
@@ -13,6 +14,8 @@ class Tasks_edit extends BaseController {
         $tasksModel = new TasksModel();
         $data['task']=$tasksModel->getTask($_GET['task']);
         $data['page_title'] = 'Aufgabe bearbeiten';
+        $tabModel = new TabModel();
+        $data['tabsTasks'] = $tabModel->getData();
 
         echo view('templates/header', $data);
         echo view('tasks/tasks_edit', $data);

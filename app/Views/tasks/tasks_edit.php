@@ -58,21 +58,12 @@
                     <label for="selectTab">Zugehöriger Reiter:</label>
                     <select class="form-select mt-1" aria-label="Default select example" id="selectTab" name="reiter">
                         <?php
-
-                        //foreach ($reiterTasks as $reiter){
-                        for($i=1;$i<=3;$i++){ // Work in progress
-                            if($i==1){
-                                $r = 'ToDo';
-                            }else if($i==2){
-                                $r = 'Erledigt';
-                            }else{
-                                $r = 'Verschoben';
-                            }
+                        foreach ($tabsTasks as $reiter){
                             echo('<option ');
-                            if($r==$task['Name']) {
+                            if($reiter['ID']==$task['TabID']) {
                                 echo('selected ');
                             }
-                            echo('value="'.$i.'">'.$r.'</option>');
+                            echo('value="'.$reiter['ID'].'">'.$reiter['Name'].'</option>');
                         }
                         ?>
                     </select>

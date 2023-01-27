@@ -22,6 +22,7 @@ class TasksModel extends Model {
     mitglieder.Username,
     mitglieder.ID As UserID,
     reiter.Name,
+    reiter.ID As TabID,
     aufgaben.Name As Name1,
     aufgaben.Beschreibung,
     aufgaben.Erstellungsdatum,
