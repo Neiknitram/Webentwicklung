@@ -22,4 +22,8 @@ class TabModel extends Model {
         $this->db->query('INSERT INTO reiter (Name,Beschreibung)
                 VALUES ("'.$name.'","'.$description.'");');
     }
+
+    public function deleteTab($ID){
+        $this->db->query('DELETE FROM reiter WHERE ID="'.$ID.'"');
+    }
 }

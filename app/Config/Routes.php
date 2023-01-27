@@ -60,6 +60,7 @@ $routes->post('/tasksEdit', 'Tasks_edit::editTask');
 $routes->post('/logout', 'Login::logout');
 $routes->post('/tabEdit', 'Tab_edit::editTab');
 $routes->post('/tabAdd', 'Tab::addTab');
+$routes->post('/tabDelete', 'Tab_delete::deleteTab');
 
 /*
  * --------------------------------------------------------------------
