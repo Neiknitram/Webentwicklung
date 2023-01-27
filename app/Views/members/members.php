@@ -80,8 +80,8 @@
                                name="checkAssignedProject">
                     </div>
                     <!-- Buttons -->
-                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2">Speichern</button>
-                    <button type="submit" name="reset" class="btn btn-info text-light mb-2 mt-2">Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
+                    <button type="submit" name="reset" class="btn btn-info text-light mb-2 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
                 </form>
             </div>
 
