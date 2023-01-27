@@ -31,8 +31,8 @@
                             echo('<td>' . $tab['Name'] . '</td>');
                             echo('<td>' . $tab['Beschreibung'] . '</td>');
                             echo(' <td class="text-end">
-                                <a href="tab_edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="tab_delete"><i class="fa-regular fa-trash-can"></i></a>
+                                <a href="tab_edit?tab='.$tab['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="tab_delete?tab='.$tab['ID'].'"><i class="fa-regular fa-trash-can"></i></a>
                             </td>
                         </tr>');
                         }

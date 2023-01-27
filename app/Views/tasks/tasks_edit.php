@@ -8,7 +8,7 @@
         <div class="card-body">
             <h5 class="card-title text-uppercase">Datensatz bearbeiten:</h5>
 
-            <form  action="<?php echo site_url('/tasksEdit'); ?>" method="post">
+            <form action="<?php echo site_url('/tasksEdit'); ?>" method="post">
                 <!-- Project name -->
                 <div class="form-group mb-3 mt-3">
                     <label for="inputText">Aufgabenbezeichnung:</label>
