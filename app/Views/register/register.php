@@ -3,6 +3,8 @@
 
     <?php echo view('templates/headline'); ?>
 
+    <?php echo view('templates/navbar'); ?>
+
     <div class="row">
 
         <!-- Register-Form -->

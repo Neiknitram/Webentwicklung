@@ -3,9 +3,11 @@
 
     <?php echo view('templates/headline'); ?>
 
-    <div class="row">
+    <?php echo view('templates/navbar'); ?>
 
-        <?php echo view('templates/sidebar'); ?>
+    <div class="row mt-3 justify-content-center">
+
+        <!-- < ?php echo view('templates/sidebar'); ?> -->
 
         <!-- Main content -->
         <div class="col">

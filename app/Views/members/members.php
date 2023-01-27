@@ -3,9 +3,11 @@
 
     <?php echo view('templates/headline'); ?>
 
-    <div class="row">
+    <?php echo view('templates/navbar'); ?>
 
-        <?php echo view('templates/sidebar'); ?>
+    <div class="row  mt-3 justify-content-center">
+
+        <!-- < ?php echo view('templates/sidebar'); ?> -->
 
         <div class="col-8">
             <div class="row mx-1 my-1">
@@ -53,7 +55,7 @@
 
             <div class="row">
                 <form method="post" action="<?php echo site_url('/membersAdd'); ?>">
-                    <h4 class="mt-4">Erstellen:</h4>
+                    <h4 class="mt-3">Erstellen:</h4>
                     <!-- Username input -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Benutzername:</label>
