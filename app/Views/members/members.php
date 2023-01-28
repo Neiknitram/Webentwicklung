@@ -121,7 +121,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Sie sind dabei den gewählten Reiter unwiderruflich aus der Datenbank zu löschen. Möchten Sie den Vorgang durchführen?                        </div>
+                            Sie sind dabei den gewählten Benutzer unwiderruflich aus der Datenbank zu löschen. Möchten Sie den Vorgang durchführen?                        </div>
                         <div class="modal-footer">
                             <form method="post" action="<?php echo site_url('/membersDelete'); ?>">
                                 <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Benutzer löschen</button>

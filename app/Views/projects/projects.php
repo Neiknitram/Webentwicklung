@@ -39,9 +39,10 @@
 
                     <!-- Buttons project -->
                     <button type="submit" name="select" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-hand-pointer"></i> Auswählen</button>
-                    <button type="submit" name="edit" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-pen-to-square"></i> Bearbeiten</button>
-                    <button type="submit" name="delete" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Löschen</button>
+                    <a data-bs-toggle="modal" data-bs-target="#projectEditModal" name="edit" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-pen-to-square"></i> Bearbeiten</a>
+                    <a data-bs-toggle="modal" data-bs-target="#projectDelModal" name="edit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Löschen</a>
                 </form>
+
                 <form action="<?php echo site_url('/add_projects'); ?>" method="post">
                     <h4 class="mt-4">Neues Projekt erstellen:</h4>
 
@@ -69,6 +70,70 @@
             </div>
 
         </div>
+
+        <!-- Project edit Modal -->
+        <div class="modal fade" id="projectEditModal" tabindex="-1" aria-labelledby="projectEditModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-uppercase" id="projectEditModalLabel">Datensatz bearbeiten:</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Project name -->
+                        <div class="form-group mb-3 mt-3">
+                            <label for="inputText">Projektname:</label>
+                            <?php
+                            echo('<input class="form-control mt-2" id="inputText" name="name" placeholder="<Projektname>"');
+                            if(isset($name)){
+                                echo(' value="'.$name.'"');
+                            }
+                            echo('>')
+                            ?>
+                        </div>
+
+                        <!-- Project description -->
+                        <div class="form-group mb-3 mt-3">
+                            <div class="form-group mb-2 mt-2">
+                                <label for="inputTextarea">Projektbeschreibung:</label>
+                                <textarea class="form-control mt-2" id="inputTextarea" name="text" rows="3"
+                                          placeholder="<Projektbeschreibung>"><?php
+                                    if(isset($description)){
+                                        echo($description);
+                                    }
+                                    ?>
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
+                        <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Abbrechen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project delete Modal -->
+        <div class="modal fade" id="projectDelModal" tabindex="-1" aria-labelledby="projectDelModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-uppercase" id="projectDelModalLabel">Achtung!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Sie sind dabei den gewählten Reiter unwiderruflich aus der Datenbank zu löschen. Möchten Sie den Vorgang durchführen?                        </div>
+                    <div class="modal-footer">
+                        <form method="post" action="<?php echo site_url('/projectsDelete'); ?>">
+                            <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Projekt löschen</button>
+                            <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Abbrechen</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
