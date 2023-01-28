@@ -28,42 +28,43 @@
                     <!-- Load Tasklist -->
                     <tbody>
                     <?php
-                        foreach ($tasks as $task) {
+                    foreach ($tasks as $task) {
                         echo "<tr>";
-                            echo('<td>' );
-                            if (isset($task['Name1'])) echo($task['Name1']);
-                            echo('</td>');
+                        echo('<td>');
+                        if (isset($task['Name1'])) echo($task['Name1']);
+                        echo('</td>');
 
-                            echo('<td>' );
-                            if (isset($task['Beschreibung'])) echo($task['Beschreibung']);
-                            echo('</td>');
+                        echo('<td>');
+                        if (isset($task['Beschreibung'])) echo($task['Beschreibung']);
+                        echo('</td>');
 
-                            echo('<td>' );
-                            if (isset($task['Name'])) echo($task['Name']);
-                            echo('</td>');
+                        echo('<td>');
+                        if (isset($task['Name'])) echo($task['Name']);
+                        echo('</td>');
 
-                            echo('<td>' );
-                            if (isset($task['Username'])) echo($task['Username']);
-                            echo('</td>');
+                        echo('<td>');
+                        if (isset($task['Username'])) echo($task['Username']);
+                        echo('</td>');
 
-                            echo(' <td class="text-end">');
-                            if(session_id() == '') {
-                                session_start();
-                            }
-                            if(isset($_SESSION['ID'])) {
-                                echo(' <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#taskEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#taskDelModal"><i class="fa-regular fa-trash-can"></i></a>');
-                            }
-                            echo('</td>
-                            </tr>');
+                        echo(' <td class="text-end">');
+                        if (session_id() == '') {
+                            session_start();
                         }
-                        ?>
+                        if (isset($_SESSION['ID'])) {
+                            echo(' <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#taskEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#taskDelModal"><i class="fa-regular fa-trash-can"></i></a>');
+                        }
+                        echo('</td>
+                            </tr>');
+                    }
+                    ?>
                     </tbody>
                 </table>
             </div>
 
             <!-- Task edit Modal -->
-            <div class="modal fade" id="taskEditModal" tabindex="-1" aria-labelledby="taskEditModalLabel" aria-hidden="true">
+            <div class="modal fade" id="taskEditModal" tabindex="-1" aria-labelledby="taskEditModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -107,7 +108,8 @@
                                 <!-- Select tab -->
                                 <div class="form-group mb-3 mt-3">
                                     <label for="selectTab">Zugehöriger Reiter:</label>
-                                    <select class="form-select mt-1" aria-label="Default select example" id="selectTab" name="reiter">
+                                    <select class="form-select mt-1" aria-label="Default select example" id="selectTab"
+                                            name="reiter">
 
                                         <!-- FUNKTION FEHLT -->
 
@@ -119,7 +121,8 @@
 
                                     <!-- FUNKTION FEHLT -->
 
-                                    <select class="form-select mt-1" aria-label="Default select example" id="selectMember" name="member">
+                                    <select class="form-select mt-1" aria-label="Default select example"
+                                            id="selectMember" name="member">
 
                                         <!-- FUNKTION FEHLT -->
 
@@ -127,8 +130,12 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
-                                <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Abbrechen</button>
+                                <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i
+                                            class="fa-regular fa-floppy-disk"></i> Speichern
+                                </button>
+                                <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal">
+                                    <i class="fa-solid fa-xmark"></i> Abbrechen
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -136,7 +143,8 @@
             </div>
 
             <!-- Task delete Modal -->
-            <div class="modal fade" id="taskDelModal" tabindex="-1" aria-labelledby="taskDelModalLabel" aria-hidden="true">
+            <div class="modal fade" id="taskDelModal" tabindex="-1" aria-labelledby="taskDelModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -144,11 +152,17 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Sie sind dabei die gewählte Aufgabe unwiderruflich aus der Datenbank zu löschen. Möchten Sie den Vorgang durchführen?                        </div>
+                            Sie sind dabei die gewählte Aufgabe unwiderruflich aus der Datenbank zu löschen. Möchten Sie
+                            den Vorgang durchführen?
+                        </div>
                         <div class="modal-footer">
                             <form method="post" action="<?php echo site_url('/tasksDelete'); ?>">
-                                <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Aufgabe löschen</button>
-                                <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Abbrechen</button>
+                                <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i>
+                                    Aufgabe löschen
+                                </button>
+                                <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal">
+                                    <i class="fa-solid fa-xmark"></i> Abbrechen
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -162,7 +176,8 @@
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Aufgabenbezeichnung:</label>
-                        <input class="form-control mt-1" id="inputText" name="Name" placeholder="Aufgabenbezeichnung eingeben">
+                        <input class="form-control mt-1" id="inputText" name="Name"
+                               placeholder="Aufgabenbezeichnung eingeben">
                     </div>
 
                     <!-- Project description -->
@@ -193,11 +208,12 @@
                     <!-- Select tab -->
                     <div class="form-group mb-3 mt-3">
                         <label for="selectTab">Zugehöriger Reiter:</label>
-                        <select name="reiter" class="form-select mt-1" aria-label="Default select example" id="selectTab">
+                        <select name="reiter" class="form-select mt-1" aria-label="Default select example"
+                                id="selectTab">
                             <option selected disabled>- bitte auswählen -</option>
                             <?php
-                            foreach ($tabs as $tab){
-                                echo(' <option value="'.$tab['ID'].'">'.$tab['Name'].'</option>');
+                            foreach ($tabs as $tab) {
+                                echo(' <option value="' . $tab['ID'] . '">' . $tab['Name'] . '</option>');
                             }
                             ?>
                         </select>
@@ -206,19 +222,24 @@
                     <!-- Select member -->
                     <div class="form-group mb-3 mt-3">
                         <label for="selectMember">Zuständig:</label>
-                        <select class="form-select mt-1" aria-label="Default select example" id="selectMember" name="member">
+                        <select class="form-select mt-1" aria-label="Default select example" id="selectMember"
+                                name="member">
                             <option selected disabled>- bitte auswählen -</option>
                             <?php
-                            foreach ($members as $member){
-                                echo('<option value="'.$member['ID'].'">'.$member['Username'].'</option>');
+                            foreach ($members as $member) {
+                                echo('<option value="' . $member['ID'] . '">' . $member['Username'] . '</option>');
                             }
                             ?>
                         </select>
                     </div>
 
                     <!-- Buttons -->
-                    <button type="submit" name="save" class="btn btn-primary mb-5 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
-                    <button type="button" class="btn btn-info text-light mb-5 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-5 mt-2"><i
+                                class="fa-regular fa-floppy-disk"></i> Speichern
+                    </button>
+                    <button type="button" class="btn btn-info text-light mb-5 mt-2"><i
+                                class="fa-solid fa-rotate-left"></i> Reset
+                    </button>
 
                 </form>
 

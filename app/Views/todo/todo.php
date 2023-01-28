@@ -15,17 +15,17 @@
 
                 <!-- Card 01 -->
                 <?php
-                foreach ($tabID as $tab){
+                foreach ($tabID as $tab) {
                     echo('<div class="col-12 col-lg mt-2 mb-2 mt-lg-0 mb-lg-0 ps-3 pe-3">
                     <div class="card">
                         <div class="card-header">');
                     echo($tab['Name']);
                     echo('</div>
                         <ul class="list-group list-group-flush">');
-                    foreach ($todo as $card){
-                        if($card['ID']==$tab['ID']){
+                    foreach ($todo as $card) {
+                        if ($card['ID'] == $tab['ID']) {
                             echo('<li class="list-group-item">');
-                            echo($card['Name1'].' ('.$card['Username'].')');
+                            echo($card['Name1'] . ' (' . $card['Username'] . ')');
                             echo('</li>');
                         }
                     }

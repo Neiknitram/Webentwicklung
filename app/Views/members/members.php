@@ -32,8 +32,8 @@
                         echo('<td>' . $member['EMail'] . '</td>');
                         echo('<td>
                                       <input class="form-check-input" type="checkbox" value="" id="item1check"');
-                        foreach ($membersID as $ID){
-                            if (isset($_SESSION['ID'])&& ($ID['mitglieder_id']==$member['ID'])) echo ('checked');
+                        foreach ($membersID as $ID) {
+                            if (isset($_SESSION['ID']) && ($ID['mitglieder_id'] == $member['ID'])) echo('checked');
                         }
                         echo(' disabled>
                                       <label class="form-check-label" for="item1check"></label>
@@ -57,7 +57,8 @@
             </div>
 
             <!-- Members edit Modal -->
-            <div class="modal fade" id="membersEditModal" tabindex="-1" aria-labelledby="membersEditModalLabel" aria-hidden="true">
+            <div class="modal fade" id="membersEditModal" tabindex="-1" aria-labelledby="membersEditModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -65,55 +66,61 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                                <!-- Username input -->
-                                <div class="form-group mb-3 mt-3">
-                                    <label for="inputText">Benutzername:</label>
-                                    <?php
-                                    echo('<input class="form-control mt-1" id="inputText" name="inputText" placeholder="<Benutzername>" 
+                            <!-- Username input -->
+                            <div class="form-group mb-3 mt-3">
+                                <label for="inputText">Benutzername:</label>
+                                <?php
+                                echo('<input class="form-control mt-1" id="inputText" name="inputText" placeholder="<Benutzername>" 
                         value="');
-                                    echo($_SESSION["Username"]);
-                                    echo('">');
-                                    ?>
-                                </div>
-                                <!-- E-Mail input -->
-                                <div class="form-group mb-3 mt-3">
-                                    <label for="inputEmail">Email-Adresse:</label>
-                                    <?php
-                                    echo('<input type="email" class="form-control mt-1" id="inputEmail" name="inputEmail" 
+                                echo($_SESSION["Username"]);
+                                echo('">');
+                                ?>
+                            </div>
+                            <!-- E-Mail input -->
+                            <div class="form-group mb-3 mt-3">
+                                <label for="inputEmail">Email-Adresse:</label>
+                                <?php
+                                echo('<input type="email" class="form-control mt-1" id="inputEmail" name="inputEmail" 
                         placeholder="<Email-Adresse>" value="');
-                                    echo($_SESSION["Email"]);
-                                    echo('">');
-                                    ?>
-                                </div>
-                                <!-- Password input -->
-                                <div class="form-group mb-3 mt-3">
-                                    <label for="inputPassword">Passwort:</label>
-                                    <input type="password" class="form-control mt-1" id="inputPassword" name="inputPassword"
-                                           placeholder="<Passwort>">
-                                </div>
-                                <!-- Assigned to project -->
-                                <div class="form-check mb-3 mt-3">
-                                    <label class="form-check-label" for="checkAssignedProject">Dem Projekt zugeordnet</label>
-                                    <?php
-                                    echo('<input type="checkbox" class="form-check-input mt-1" id="checkProject"
+                                echo($_SESSION["Email"]);
+                                echo('">');
+                                ?>
+                            </div>
+                            <!-- Password input -->
+                            <div class="form-group mb-3 mt-3">
+                                <label for="inputPassword">Passwort:</label>
+                                <input type="password" class="form-control mt-1" id="inputPassword" name="inputPassword"
+                                       placeholder="<Passwort>">
+                            </div>
+                            <!-- Assigned to project -->
+                            <div class="form-check mb-3 mt-3">
+                                <label class="form-check-label" for="checkAssignedProject">Dem Projekt
+                                    zugeordnet</label>
+                                <?php
+                                echo('<input type="checkbox" class="form-check-input mt-1" id="checkProject"
                            name="checkProject"');
-                                    foreach ($membersID as $ID){
-                                        if (isset($_SESSION['ID'])&& ($ID['mitglieder_id']==$_SESSION['ID'])) echo ('checked');
-                                    }
-                                    echo('>');
-                                    ?>
-                                </div>
+                                foreach ($membersID as $ID) {
+                                    if (isset($_SESSION['ID']) && ($ID['mitglieder_id'] == $_SESSION['ID'])) echo('checked');
+                                }
+                                echo('>');
+                                ?>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
-                            <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Abbrechen</button>
+                            <button type="submit" class="btn btn-success mb-2 mt-2" value="Save"><i
+                                        class="fa-regular fa-floppy-disk"></i> Speichern
+                            </button>
+                            <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i
+                                        class="fa-solid fa-xmark"></i> Abbrechen
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Members delete Modal -->
-            <div class="modal fade" id="membersDelModal" tabindex="-1" aria-labelledby="membersDelModalLabel" aria-hidden="true">
+            <div class="modal fade" id="membersDelModal" tabindex="-1" aria-labelledby="membersDelModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -121,11 +128,17 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            Sie sind dabei den gewählten Benutzer unwiderruflich aus der Datenbank zu löschen. Möchten Sie den Vorgang durchführen?                        </div>
+                            Sie sind dabei den gewählten Benutzer unwiderruflich aus der Datenbank zu löschen. Möchten
+                            Sie den Vorgang durchführen?
+                        </div>
                         <div class="modal-footer">
                             <form method="post" action="<?php echo site_url('/membersDelete'); ?>">
-                                <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Benutzer löschen</button>
-                                <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Abbrechen</button>
+                                <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i>
+                                    Benutzer löschen
+                                </button>
+                                <button type="button" class="btn btn-outline-danger mb-2 mt-2" data-bs-dismiss="modal">
+                                    <i class="fa-solid fa-xmark"></i> Abbrechen
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -138,7 +151,8 @@
                     <!-- Username input -->
                     <div class="form-group mb-3 mt-3">
                         <label for="inputText">Benutzername:</label>
-                        <input class="form-control mt-1" name="inputText" id="inputText" placeholder="Benutzername eingeben">
+                        <input class="form-control mt-1" name="inputText" id="inputText"
+                               placeholder="Benutzername eingeben">
                     </div>
                     <!-- E-Mail input -->
                     <div class="form-group mb-3 mt-3">
@@ -159,8 +173,12 @@
                                name="checkAssignedProject">
                     </div>
                     <!-- Buttons -->
-                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-floppy-disk"></i> Speichern</button>
-                    <button type="submit" name="reset" class="btn btn-info text-light mb-2 mt-2"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                    <button type="submit" name="save" class="btn btn-primary mb-2 mt-2"><i
+                                class="fa-regular fa-floppy-disk"></i> Speichern
+                    </button>
+                    <button type="submit" name="reset" class="btn btn-info text-light mb-2 mt-2"><i
+                                class="fa-solid fa-rotate-left"></i> Reset
+                    </button>
                 </form>
             </div>
 
