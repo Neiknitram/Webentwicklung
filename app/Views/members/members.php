@@ -12,7 +12,7 @@
         <div class="col-12 col-lg-8 ps-4 pe-4">
             <div class="row">
                 <!-- Table -->
-                <table class="table table-bordered table-borderless mt-2" data-toggle="table">
+                <table class="table table-bordered table-striped table-borderless mt-2" data-toggle="table">
                     <thead class="bg-light">
                     <!-- Table headline -->
                     <tr>
@@ -45,6 +45,8 @@
                                       <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#membersEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
                                       <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#membersDelModal"><i class="fa-regular fa-trash-can"></i></a>
                                       </td>');
+                            } else {
+                                echo('<td></td>');
                             }
                         }
                         echo('</tr>');

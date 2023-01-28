@@ -13,7 +13,7 @@
             <div class="row mx-1 my-1">
 
                 <!-- Table -->
-                <table class="table table-bordered table-borderless mt-2" data-toggle="table">
+                <table class="table table-bordered table-striped table-borderless mt-2" data-toggle="table">
                     <thead class="bg-light">
                     <!-- Table headline -->
                     <tr>
