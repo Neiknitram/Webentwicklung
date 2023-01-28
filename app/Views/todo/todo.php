@@ -16,7 +16,7 @@
                 <!-- Card 01 -->
                 <?php
                 foreach ($tabID as $tab){
-                    echo('<div class="col-12 col-lg mt-2 mb-2 mt-lg-0 mb-lg-0">
+                    echo('<div class="col-12 col-lg mt-2 mb-2 mt-lg-0 mb-lg-0 ps-3 pe-3">
                     <div class="card">
                         <div class="card-header">');
                     echo($tab['Name']);

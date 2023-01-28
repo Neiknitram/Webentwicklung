@@ -9,7 +9,7 @@
 
         <!-- < ?php echo view('templates/sidebar'); ?> -->
 
-        <div class="col-12 col-lg-8">
+        <div class="col-12 col-lg-8 ps-4 pe-4">
             <div class="row mx-1 my-1">
                 <!-- Table -->
                 <table class="table border table-borderless mt-2">
