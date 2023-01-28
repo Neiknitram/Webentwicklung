@@ -139,7 +139,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        Sie sind dabei den gewählten Reiter unwiderruflich aus der Datenbank zu löschen. Möchten Sie den
+                        Sie sind dabei das gewählte Projekt unwiderruflich aus der Datenbank zu löschen. Möchten Sie den
                         Vorgang durchführen?
                     </div>
                     <div class="modal-footer">
