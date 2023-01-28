@@ -13,4 +13,4 @@ https://dev.martinkien.info
 <li>Bootstrap v5.2.2</li>
 <li>CodeIgniter v4.2.11</li>
 <li>JQuery v3.6.1</li>
-<li>Popper.JS 2.9.2</li>
+<li>Popper.JS v2.9.2</li>
