@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Aufgabenplaner | <?php echo $page_title ?></title>
 
     <!-- Bootstrap CSS + Bootsrap Table + Font-Awesome + Stylesheet -->
