@@ -5,11 +5,11 @@
 
     <?php echo view('templates/navbar'); ?>
 
-    <div class="row  mt-3 justify-content-center">
+    <div class="row mt-3 justify-content-center">
 
         <!-- < ?php echo view('templates/sidebar'); ?> -->
 
-        <div class="col-8">
+        <div class="col-12 col-lg-8">
             <div class="row mx-1 my-1">
                 <!-- Table -->
                 <table class="table border table-borderless mt-2">

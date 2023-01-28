@@ -6,7 +6,7 @@
     <div class="row">
 
         <!-- Login-Form -->
-        <div class="col-6 mx-auto">
+        <div class="col-12 col-lg-6 mx-auto">
             <div class="row">
 
 

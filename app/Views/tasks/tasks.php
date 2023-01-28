@@ -9,7 +9,7 @@
 
         <!-- < ?php echo view('templates/sidebar'); ?> -->
 
-        <div class="col-8">
+        <div class="col-12 col-lg-8">
             <div class="row mx-1 my-1">
 
                 <!-- Table -->
