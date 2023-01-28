@@ -1,5 +1,5 @@
 <!-- Load Footer -->
-<div class="card-footer text-center pt-4 pb-4">&copy; <?php echo date("Y"); ?> Philipp Geier (1539462) &amp; Martin Kien
+<div class="card-footer text-center pt-4 pb-4">&copy; <?php echo date("Y"); ?> Philipp Geier (1539462) <br class="d-md-none"> &amp; Martin Kien
     (1603310)
 </div>
 
