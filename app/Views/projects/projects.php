@@ -43,7 +43,7 @@
                     <button type="submit" name="delete" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Löschen</button>
                 </form>
                 <form action="<?php echo site_url('/add_projects'); ?>" method="post">
-                    <h4 class="mt-4">Projekt erstellen:</h4>
+                    <h4 class="mt-4">Neues Projekt erstellen:</h4>
 
                     <!-- Project name -->
                     <div class="form-group mb-3 mt-3">
