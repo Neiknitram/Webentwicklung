@@ -10,16 +10,16 @@
         <!-- < ?php echo view('templates/sidebar'); ?> -->
 
         <div class="col-12 col-lg-8 ps-4 pe-4">
-            <div class="row mx-1 my-1">
+            <div class="row">
                 <!-- Table -->
-                <table class="table border table-borderless mt-2">
+                <table class="table table-bordered table-borderless mt-2" data-toggle="table">
                     <thead class="bg-light">
                     <!-- Table headline -->
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">E-Mail</th>
                         <th scope="col">In Projekt</th>
-                        <th scope="col"></th>
+                        <th scope="col">Optionen</th>
                     </tr>
                     </thead>
 
@@ -42,8 +42,8 @@
                             if ($member['ID'] == $_SESSION['ID']) {
                                 echo('
                                   <td class="text-end">
-                                      <a href="" data-bs-toggle="modal" data-bs-target="#membersEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
-                                      <a href="" data-bs-toggle="modal" data-bs-target="#membersDelModal"><i class="fa-regular fa-trash-can"></i></a>
+                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#membersEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
+                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#membersDelModal"><i class="fa-regular fa-trash-can"></i></a>
                                       </td>');
                             }
                         }

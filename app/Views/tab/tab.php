@@ -13,13 +13,13 @@
             <div class="row mx-1 my-1">
 
                 <!-- Table -->
-                <table class="table border table-borderless mt-2">
+                <table class="table table-bordered table-borderless mt-2" data-toggle="table">
                     <thead class="bg-light">
                     <!-- Table headline -->
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Beschreibung</th>
-                        <th scope="col"></th>
+                        <th scope="col">Optionen</th>
                     </tr>
                     </thead>
 
@@ -32,8 +32,8 @@
                             echo('<td>' . $tab['Beschreibung'] . '</td>');
                             if(isset($_SESSION['ID'])) {
                                 echo(' <td class="text-end">
-                                      <a href="" data-bs-toggle="modal" data-bs-target="#tabEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
-                                      <a href="" data-bs-toggle="modal" data-bs-target="#tabDelModal"><i class="fa-regular fa-trash-can"></i></a>
+                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#tabEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
+                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#tabDelModal"><i class="fa-regular fa-trash-can"></i></a>
                                 </td>');
                             }
                             echo('</tr>');

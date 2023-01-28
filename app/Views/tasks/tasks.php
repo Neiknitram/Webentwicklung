@@ -13,7 +13,7 @@
             <div class="row mx-1 my-1">
 
                 <!-- Table -->
-                <table class="table border table-borderless mt-2">
+                <table class="table table-bordered table-borderless mt-2" data-toggle="table">
                     <thead class="bg-light">
                     <!-- Table headline -->
                     <tr>
@@ -21,7 +21,7 @@
                         <th scope="col">Beschreibung der Aufgabe</th>
                         <th scope="col">Reiter</th>
                         <th scope="col">Zuständig</th>
-                        <th scope="col"></th>
+                        <th scope="col">Optionen</th>
                     </tr>
                     </thead>
 
@@ -51,8 +51,8 @@
                                 session_start();
                             }
                             if(isset($_SESSION['ID'])) {
-                                echo(' <a href="" data-bs-toggle="modal" data-bs-target="#taskEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="" data-bs-toggle="modal" data-bs-target="#taskDelModal"><i class="fa-regular fa-trash-can"></i></a>');
+                                echo(' <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#taskEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#taskDelModal"><i class="fa-regular fa-trash-can"></i></a>');
                             }
                             echo('</td>
                             </tr>');
