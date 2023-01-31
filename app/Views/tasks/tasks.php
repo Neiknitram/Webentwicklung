@@ -51,7 +51,7 @@
                             session_start();
                         }
                         if (isset($_SESSION['ID'])) {
-                            echo(' <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#taskEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
+                            echo(' <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#taskEditModal'.$task['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
                                 <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#taskDelModal"><i class="fa-regular fa-trash-can"></i></a>');
                         }
                         echo('</td>
@@ -63,8 +63,10 @@
             </div>
 
             <!-- Task edit Modal -->
-            <div class="modal fade" id="taskEditModal" tabindex="-1" aria-labelledby="taskEditModalLabel"
-                 aria-hidden="true">
+            <?php
+                    foreach ($tasks as $task) {
+            echo('<div class="modal fade" id="taskEditModal'.$task['ID'].'" tabindex="-1" aria-labelledby="taskEditModalLabel"
+                 aria-hidden="true"> <form action="'.site_url('/tasksEdit').'" method="post">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -74,35 +76,47 @@
                         <div class="modal-body">
                             <!-- Project name -->
                             <div class="form-group mb-3 mt-3">
-                                <label for="inputText">Aufgabenbezeichnung:</label>
+                                <label for="inputText">Aufgabenbezeichnung:</label>');
 
-                                <!-- FUNKTION FEHLT -->
+                                echo('<input type="hidden" id="ID" name="ID" value="'.$task['ID'].'">');
+                                echo('<input class="form-control mt-1" id="inputText" placeholder="<Aufgabenbezeichnung>" name="Name"');
+                                echo(' value="'.$task['Name1'].'"');
+                                echo('>');
 
+
+echo('
                             </div>
                             <!-- Project description -->
                             <div class="form-group mb-3 mt-3">
                                 <div class="form-group mb-2 mt-2">
-                                    <label for="inputTextarea">Beschreibung der Aufgabe:</label>
+                                    <label for="inputTextarea">Beschreibung der Aufgabe:</label>');
 
-                                    <!-- FUNKTION FEHLT -->
+                                    echo('<textarea class="form-control mt-1" id="inputTextarea" rows="3"
+                                  placeholder="<Aufgabenbeschreibung>" name="description">');
+                        echo($task['Beschreibung']);
+                        echo('</textarea>
 
                                 </div>
                             </div>
                             <!-- Datepicker creation -->
                             <div class="form-group mb-3 mt-3">
                                 <div class="form-group mb-2 mt-2">
-                                    <label for="inputDateCreation">Erstellungsdatum:</label>
+                                    <label for="inputDateCreation">Erstellungsdatum:</label>');
 
-                                    <!-- FUNKTION FEHLT -->
+                        echo('<input type="date" class="form-control mt-1" id="inputDateCreation" name="date1"');
+                        echo(' value="'.$task['Erstellungsdatum'].'"');
+                        echo('>
 
                                 </div>
                             </div>
                             <!-- Datepicker due -->
                             <div class="form-group mb-3 mt-3">
                                 <div class="form-group mb-2 mt-2">
-                                    <label for="inputDateDue">Fällig bis:</label>
+                                    <label for="inputDateDue">Fällig bis:</label>');
 
-                                    <!-- FUNKTION FEHLT -->
+                        echo('<input type="date" class="form-control mt-1" id="inputDateDue" name="date2"');
+                        echo(' value="'.$task['Faelligkeitsdatum'].'"');
+                        echo('>
 
                                 </div>
                                 <!-- Select tab -->
@@ -111,20 +125,45 @@
                                     <select class="form-select mt-1" aria-label="Default select example" id="selectTab"
                                             name="reiter">
 
-                                        <!-- FUNKTION FEHLT -->
+                                        ');
+
+                        foreach ($tabs as $reiter){
+                            echo('<option ');
+                            if($reiter['ID']==$task['TabID']) {
+                                echo('selected ');
+                            }
+                            echo('value="'.$reiter['ID'].'">'.$reiter['Name'].'</option>');
+                        }
+                        echo('
 
                                     </select>
                                 </div>
                                 <!-- Select member -->
                                 <div class="form-group mb-3 mt-3">
-                                    <label for="selectMember">Zuständig:</label>
+                                    <label for="selectMember">Zuständig:</label>');
 
-                                    <!-- FUNKTION FEHLT -->
+
+                        foreach ($members as $member){
+                            if($member['ID']==$task['UserID']) {
+                                echo('<input type="hidden" id="lastUserID" name="lastUserID" value="'.$task['UserID'].'">');
+                            }
+                        }
+                        echo('
 
                                     <select class="form-select mt-1" aria-label="Default select example"
-                                            id="selectMember" name="member">
+                                            id="selectMember" name="member">');
 
-                                        <!-- FUNKTION FEHLT -->
+
+
+                        foreach ($members as $member){
+                            if($member['ID']==$task['UserID']) {
+                                echo('<option selected ');
+                            }else{
+                                echo('<option ');
+                            }
+                            echo('value="'.$member['ID'].'">'.$member['Username'].'</option>');
+                        }
+                        echo('
 
                                     </select>
                                 </div>
@@ -140,9 +179,15 @@
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
-
+            ');
+            }
+?>
             <!-- Task delete Modal -->
+<?php
+foreach ($tasks as $task) {
+    echo('
             <div class="modal fade" id="taskDelModal" tabindex="-1" aria-labelledby="taskDelModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -156,7 +201,8 @@
                             den Vorgang durchführen?
                         </div>
                         <div class="modal-footer">
-                            <form method="post" action="<?php echo site_url('/tasksDelete'); ?>">
+                            <form method="post" action="'.site_url('/tasksDelete').'">
+                            <input type="hidden" id="ID" name="ID" value="'.$task['ID'].'">
                                 <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i>
                                     Aufgabe löschen
                                 </button>
@@ -167,7 +213,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>');}
+    ?>
 
             <div class="row">
                 <form method="post" action="<?php echo site_url('/tasksAdd'); ?>">

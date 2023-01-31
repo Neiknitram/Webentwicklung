@@ -4,10 +4,14 @@ class TasksModel extends Model {
     public function getData(){
         $result = $this->db->query('Select
     mitglieder.Username,
+    mitglieder.ID As UserID,
     reiter.Name,
+    reiter.ID As TabID,
     aufgaben.Name As Name1,
     aufgaben.Beschreibung,
-    aufgaben.ID
+    aufgaben.ID,
+    aufgaben.Erstellungsdatum,
+    aufgaben.Faelligkeitsdatum
     From
     aufgaben_mitglieder Inner Join
     aufgaben On aufgaben.ID = aufgaben_mitglieder.aufgaben_id Inner Join

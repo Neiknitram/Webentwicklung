@@ -43,4 +43,18 @@ class Tasks extends BaseController {
         return redirect()->to(base_url() . '/'.'tasks');
     }
 
+    public function editTask(){
+        $tasksModel = new TasksModel();
+        $tasksModel->editTask($_POST['ID'],$_POST['Name'],$_POST['description'],$_POST['date1'],$_POST['date2'],$_POST['reiter'],$_POST['member'],$_POST['lastUserID']);
+        return redirect()->to(base_url() . '/'.'tasks');
+    }
+
+    public function deleteTask(){
+        session_start();
+        $tasksModel = new TasksModel();
+        $tasksModel->deleteTask($_POST['ID']);
+
+        return redirect()->to(base_url() . '/'.'tasks');
+    }
+
 }
