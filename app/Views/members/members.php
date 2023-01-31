@@ -42,8 +42,8 @@
                             if ($member['ID'] == $_SESSION['ID']) {
                                 echo('
                                   <td class="text-end">
-                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#membersEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
-                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#membersDelModal"><i class="fa-regular fa-trash-can"></i></a>
+                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#membersEditModal'.$members['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
+                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#membersDelModal'.$members['ID'].'"><i class="fa-regular fa-trash-can"></i></a>
                                       </td>');
                             } else {
                                 echo('<td></td>');
@@ -57,8 +57,11 @@
             </div>
 
             <!-- Members edit Modal -->
-            <div class="modal fade" id="membersEditModal" tabindex="-1" aria-labelledby="membersEditModalLabel"
-                 aria-hidden="true">
+            <?php
+            echo('
+            <div class="modal fade" id="membersEditModal'.$members['ID'].'" tabindex="-1" aria-labelledby="membersEditModalLabel"
+                 aria-hidden="true">');
+            ?>
                 <form method="post" action="<?php echo site_url('/membersEdit'); ?>">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -122,8 +125,11 @@
             </div>
 
             <!-- Members delete Modal -->
-            <div class="modal fade" id="membersDelModal" tabindex="-1" aria-labelledby="membersDelModalLabel"
-                 aria-hidden="true">
+        <?php
+        echo('
+            <div class="modal fade" id="membersDelModal'.$members['ID'].'" tabindex="-1" aria-labelledby="membersDelModalLabel"
+                 aria-hidden="true">');
+        ?>
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">

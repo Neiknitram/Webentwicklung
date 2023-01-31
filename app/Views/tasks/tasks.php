@@ -52,7 +52,7 @@
                         }
                         if (isset($_SESSION['ID'])) {
                             echo(' <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#taskEditModal'.$task['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
-                                <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#taskDelModal"><i class="fa-regular fa-trash-can"></i></a>');
+                                <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#taskDelModal'.$task['ID'].'"><i class="fa-regular fa-trash-can"></i></a>');
                         }
                         echo('</td>
                             </tr>');
@@ -188,7 +188,7 @@ echo('
 <?php
 foreach ($tasks as $task) {
     echo('
-            <div class="modal fade" id="taskDelModal" tabindex="-1" aria-labelledby="taskDelModalLabel"
+            <div class="modal fade" id="taskDelModal'.$task['ID'].'" tabindex="-1" aria-labelledby="taskDelModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
