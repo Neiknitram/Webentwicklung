@@ -30,4 +30,18 @@ class Tab extends BaseController {
 
     }
 
+    public function editTab(){
+        $tabModel = new TabModel();
+        $tabModel->editTab($_POST['ID'],$_POST['Name'],$_POST['Beschreibung']);
+        return redirect()->to(base_url() . '/'.'tab');
+    }
+
+    public function deleteTab(){
+        session_start();
+        $tabModel = new TabModel();
+        $tabModel->deleteTab($_POST['ID']);
+
+        return redirect()->to(base_url() . '/'.'tab');
+    }
+
 }

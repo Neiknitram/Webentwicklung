@@ -284,7 +284,7 @@ foreach ($tasks as $task) {
                     <button type="submit" name="save" class="btn btn-primary mb-5 mt-2"><i
                                 class="fa-regular fa-floppy-disk"></i> Speichern
                     </button>
-                    <button type="button" class="btn btn-info text-light mb-5 mt-2"><i
+                    <button type="submit" class="btn btn-info text-light mb-5 mt-2"><i
                                 class="fa-solid fa-rotate-left"></i> Reset
                     </button>
 

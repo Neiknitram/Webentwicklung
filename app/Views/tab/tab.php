@@ -32,8 +32,8 @@
                         echo('<td>' . $tab['Beschreibung'] . '</td>');
                         if (isset($_SESSION['ID'])) {
                             echo(' <td class="text-end">
-                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#tabEditModal"><i class="fa-regular fa-pen-to-square"></i></a>
-                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#tabDelModal"><i class="fa-regular fa-trash-can"></i></a>
+                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#tabEditModal'.$tab['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
+                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#tabDelModal'.$tab['ID'].'"><i class="fa-regular fa-trash-can"></i></a>
                                 </td>');
                         }
                         echo('</tr>');
@@ -45,8 +45,12 @@
             </div>
 
             <!-- Tab edit Modal -->
-            <div class="modal fade" id="tabEditModal" tabindex="-1" aria-labelledby="tabEditModalLabel"
+<?php
+foreach ($tabs as $tab) {
+    echo('
+            <div class="modal fade" id="tabEditModal'.$tab['ID'].'" tabindex="-1" aria-labelledby="tabEditModalLabel"
                  aria-hidden="true">
+                 <form action="'.site_url('/tabEdit').'" method="post">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -56,24 +60,24 @@
                         <div class="modal-body">
                             <!-- Project name -->
                             <div class="form-group mb-3 mt-3">
-                                <label for="inputText">Bezeichnung des Reiters:</label>
-                                <?php
+                                <label for="inputText">Bezeichnung des Reiters:</label>');
+
                                 echo('<input type="hidden" id="ID" name="ID" value="' . $tab['ID'] . '">');
                                 echo('<input class="form-control" id="inputText" name="Name" placeholder="<Bezeichnung des Reiters>"');
                                 echo(' value="' . $tab['Name'] . '"');
-                                echo('>');
-                                ?>
+                                echo('>
+                                
                             </div>
                             <!-- Project description -->
                             <div class="form-group mb-3 mt-3">
                                 <div class="form-group mb-2 mt-2">
-                                    <label for="inputTextarea">Beschreibung des Reiters:</label>
-                                    <?php
+                                    <label for="inputTextarea">Beschreibung des Reiters:</label>');
+
                                     echo('<textarea class="form-control mt-1" id="inputTextarea" name="Beschreibung" rows="3"
                                   placeholder="<Beschreibung des Reiters>">');
                                     echo($tab['Beschreibung']);
-                                    echo('</textarea>');
-                                    ?>
+                                    echo('</textarea>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -87,10 +91,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                </form>
+            </div>');
+                                    }
+?>
 
             <!-- Tab delete Modal -->
-            <div class="modal fade" id="tabDelModal" tabindex="-1" aria-labelledby="tabDelModalLabel"
+<?php
+foreach ($tabs as $tab) {
+    echo('
+            <div class="modal fade" id="tabDelModal'.$tab['ID'].'" tabindex="-1" aria-labelledby="tabDelModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -103,7 +113,8 @@
                             den Vorgang durchführen?
                         </div>
                         <div class="modal-footer">
-                            <form method="post" action="<?php echo site_url('/tabDelete'); ?>">
+                            <form method="post" action="'.site_url('/tabDelete').'">
+                            <input type="hidden" id="ID" name="ID" value="'.$tab['ID'].'">
                                 <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i>
                                     Aufgabe löschen
                                 </button>
@@ -114,7 +125,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>');
+    }
+?>
 
             <div class="row">
                 <form action="<?php echo site_url('/tabAdd'); ?>" method="post">

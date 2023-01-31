@@ -58,9 +58,9 @@ $routes->post('/tasksAdd', 'Tasks::addTask');
 $routes->post('/tasksDelete', 'Tasks::deleteTask');
 $routes->post('/tasksEdit', 'Tasks::editTask');
 $routes->post('/logout', 'Login::logout');
-$routes->post('/tabEdit', 'Tab_edit::editTab');
+$routes->post('/tabEdit', 'Tab::editTab');
 $routes->post('/tabAdd', 'Tab::addTab');
-$routes->post('/tabDelete', 'Tab_delete::deleteTab');
+$routes->post('/tabDelete', 'Tab::deleteTab');
 
 /*
  * --------------------------------------------------------------------

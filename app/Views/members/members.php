@@ -42,8 +42,8 @@
                             if ($member['ID'] == $_SESSION['ID']) {
                                 echo('
                                   <td class="text-end">
-                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#membersEditModal'.$members['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
-                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#membersDelModal'.$members['ID'].'"><i class="fa-regular fa-trash-can"></i></a>
+                                      <a href="" title="Bearbeiten" data-bs-toggle="modal" data-bs-target="#membersEditModal'.$member['ID'].'"><i class="fa-regular fa-pen-to-square"></i></a>
+                                      <a href="" title="Löschen" data-bs-toggle="modal" data-bs-target="#membersDelModal'.$member['ID'].'"><i class="fa-regular fa-trash-can"></i></a>
                                       </td>');
                             } else {
                                 echo('<td></td>');
@@ -58,11 +58,12 @@
 
             <!-- Members edit Modal -->
             <?php
-            echo('
-            <div class="modal fade" id="membersEditModal'.$members['ID'].'" tabindex="-1" aria-labelledby="membersEditModalLabel"
-                 aria-hidden="true">');
-            ?>
-                <form method="post" action="<?php echo site_url('/membersEdit'); ?>">
+            foreach ($members as $member) {
+                echo('
+            <div class="modal fade" id="membersEditModal' . $member['ID'] . '" tabindex="-1" aria-labelledby="membersEditModalLabel"
+                 aria-hidden="true">
+            
+                <form method="post" action="'.site_url('/membersEdit').'">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -72,23 +73,23 @@
                         <div class="modal-body">
                             <!-- Username input -->
                             <div class="form-group mb-3 mt-3">
-                                <label for="inputText">Benutzername:</label>
-                                <?php
+                                <label for="inputText">Benutzername:</label>');
+
                                 echo('<input class="form-control mt-1" id="inputText" name="inputText" placeholder="<Benutzername>" 
                         value="');
                                 if (isset($_SESSION["Username"])) echo($_SESSION["Username"]);
-                                echo('">');
-                                ?>
+                                echo('">
+                                
                             </div>
                             <!-- E-Mail input -->
                             <div class="form-group mb-3 mt-3">
-                                <label for="inputEmail">Email-Adresse:</label>
-                                <?php
+                                <label for="inputEmail">Email-Adresse:</label>');
+
                                 echo('<input type="email" class="form-control mt-1" id="inputEmail" name="inputEmail" 
                         placeholder="<Email-Adresse>" value="');
                                 if (isset($_SESSION["Email"])) echo($_SESSION["Email"]);
                                 echo('">');
-                                ?>
+                                echo('
                             </div>
                             <!-- Password input -->
                             <div class="form-group mb-3 mt-3">
@@ -99,15 +100,15 @@
                             <!-- Assigned to project -->
                             <div class="form-check mb-3 mt-3">
                                 <label class="form-check-label" for="checkAssignedProject">Dem Projekt
-                                    zugeordnet</label>
-                                <?php
+                                    zugeordnet</label>');
+
                                 echo('<input type="checkbox" class="form-check-input mt-1" id="checkProject"
                            name="checkProject"');
                                 foreach ($membersID as $ID) {
                                     if (isset($_SESSION['ID']) && ($ID['mitglieder_id'] == $_SESSION['ID'])) echo('checked');
                                 }
-                                echo('>');
-                                ?>
+                                echo('>
+                                
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -122,14 +123,16 @@
                     </div>
                 </div>
                 </form>
-            </div>
-
+            </div>');
+}
+?>
             <!-- Members delete Modal -->
-        <?php
-        echo('
-            <div class="modal fade" id="membersDelModal'.$members['ID'].'" tabindex="-1" aria-labelledby="membersDelModalLabel"
-                 aria-hidden="true">');
-        ?>
+<?php
+foreach ($members as $member) {
+    echo('
+            <div class="modal fade" id="membersDelModal' . $member['ID'] . '" tabindex="-1" aria-labelledby="membersDelModalLabel"
+                 aria-hidden="true">
+
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -141,7 +144,7 @@
                             Sie den Vorgang durchführen?
                         </div>
                         <div class="modal-footer">
-                            <form method="post" action="<?php echo site_url('/membersDelete'); ?>">
+                            <form method="post" action="' . site_url('/membersDelete') . '">
                                 <button type="submit" class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i>
                                     Benutzer löschen
                                 </button>
@@ -152,10 +155,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>');
+}
+    ?>
 
             <div class="row">
-                <form method="post" action="<?php echo site_url('/membersAdd'); ?>">
+                <form method="post" action="<?php echo site_url('/membersAdd')?>">
                     <h4 class="mt-3">Neues Mitglied erstellen:</h4>
                     <!-- Username input -->
                     <div class="form-group mb-3 mt-3">
