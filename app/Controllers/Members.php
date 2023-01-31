@@ -39,4 +39,31 @@ class Members extends BaseController {
         return redirect()->to(base_url() . '/'.'members');
     }
 
+    public function editMember() {
+        if (isset($_POST['inputText']) && isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
+            $membersmodel = new MembersModel();
+            if(isset($_POST['checkProject'])) {
+                $membersmodel->editMember($_POST['inputText'], $_POST['inputEmail'], $_POST['inputPassword'],
+                    $_POST['checkProject']);
+            }else{
+                $membersmodel->editMember($_POST['inputText'], $_POST['inputEmail'], $_POST['inputPassword'],
+                    null);
+            }
+        }
+
+
+        return redirect()->to(base_url() . '/'.'members');
+    }
+
+    public function deleteMember(){
+        session_start();
+        if (isset($_SESSION['ID'])) {
+            $membersmodel = new MembersModel();
+            $membersmodel->deleteMember($_SESSION['ID']);
+            session_unset();
+            session_destroy();
+            return redirect()->to(base_url() . '/'.'login');
+        }
+    }
+
 }

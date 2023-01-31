@@ -59,6 +59,7 @@
             <!-- Members edit Modal -->
             <div class="modal fade" id="membersEditModal" tabindex="-1" aria-labelledby="membersEditModalLabel"
                  aria-hidden="true">
+                <form method="post" action="<?php echo site_url('/membersEdit'); ?>">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -72,7 +73,7 @@
                                 <?php
                                 echo('<input class="form-control mt-1" id="inputText" name="inputText" placeholder="<Benutzername>" 
                         value="');
-                                echo($_SESSION["Username"]);
+                                if (isset($_SESSION["Username"])) echo($_SESSION["Username"]);
                                 echo('">');
                                 ?>
                             </div>
@@ -82,7 +83,7 @@
                                 <?php
                                 echo('<input type="email" class="form-control mt-1" id="inputEmail" name="inputEmail" 
                         placeholder="<Email-Adresse>" value="');
-                                echo($_SESSION["Email"]);
+                                if (isset($_SESSION["Email"])) echo($_SESSION["Email"]);
                                 echo('">');
                                 ?>
                             </div>
@@ -114,8 +115,10 @@
                                         class="fa-solid fa-xmark"></i> Abbrechen
                             </button>
                         </div>
+
                     </div>
                 </div>
+                </form>
             </div>
 
             <!-- Members delete Modal -->
