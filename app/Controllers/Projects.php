@@ -54,4 +54,27 @@ class Projects extends BaseController {
         return redirect()->to(base_url() . '/'.'projects');
     }
 
+    public function editProject(){
+        if (isset($_POST['name']) && isset($_POST['ID'])) {
+            $projectsModel = new ProjectsModel();
+            $projectsModel->editProject($_POST['ID'], $_POST['name'], $_POST['text']);
+        }
+        return redirect()->to(base_url() . '/'.'projects');
+    }
+
+    public function deleteProject(){
+        if (isset($_POST['ID'])) {
+            $projektsModel = new ProjectsModel();
+            $projektsModel->deleteProject($_POST['ID']);
+            if (isset($_SESSION['ProjectID'])) {
+                if ($_POST['ID'] == $_SESSION['ProjectID']) {
+                    unset($_SESSION['ProjectID']);
+                    unset($_SESSION['ProjectName']);
+                }
+            }
+        }
+
+        return redirect()->to(base_url() . '/'.'projects');
+    }
+
 }
