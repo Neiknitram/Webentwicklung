@@ -40,6 +40,7 @@ class Login extends BaseController {
     }
 
     public function logout(){
+        session_start();
         if(isset($_SESSION['ProjectID'])) unset($_SESSION['ProjectID']);
         if(isset($_SESSION)) {
             session_unset();

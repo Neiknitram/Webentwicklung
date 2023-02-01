@@ -16,6 +16,8 @@
 
                     <!-- Select project -->
                     <div class="form-group mb-3 mt-3">
+
+
                         <select class="form-select mt-1" aria-label="Default select example" id="selectProject"
                                 name="selectProject">
                             <?php
@@ -23,6 +25,7 @@
                             if (session_id() == '') {
                                 session_start();
                             }
+                            //if (isset($_SESSION["ProjectID"])) setID();
                             echo('<option value ="" ');
                             if (!isset($_SESSION['ProjectID'])) {
                                 echo('selected ');
@@ -52,7 +55,10 @@
                     <a id="edit" data-bs-toggle="modal" data-bs-target="#projectEditModal'.$_GET["projectID"].'" 
                        class="btn btn-primary mb-2 mt-2"><i class="fa-regular fa-pen-to-square"></i> Bearbeiten</a>
                     <a data-bs-toggle="modal" data-bs-target="#projectDelModal'.$_GET["projectID"].'" 
-                       class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Löschen</a>');}
+                       class="btn btn-danger mb-2 mt-2"><i class="fa-solid fa-trash"></i> Löschen</a>');
+                    }else{
+
+                    }
                     
                 echo('</form>');
                 ?>
@@ -179,12 +185,26 @@ foreach ($projects as $project) {
 
     </div>
 </div>
-
 <script>
+    document.getElementById("selectProject").onchange = function() {
+        window.location = "projects?projectID=" + this.value;
+    };
+<?php
+if(!isset($_GET["projectID"])){
 
-            document.getElementById('selectProject').onchange = function() {
-                window.location = "projects?projectID=" + this.value;
-            };
+    echo('
 
+            function setID(id) {
+                window.location = "projects?projectID=" + id ;
+            };');
+    if (isset($_SESSION["ProjectID"])) echo('setID('.$_SESSION["ProjectID"].');
+            
+
+           
+
+');
+}
+?>
 </script>
+
 
